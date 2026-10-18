@@ -809,65 +809,60 @@ export function build(rt: Runtime) {
         if (rt.currentMSecs - f.l[0]! < f.l[1]!) return Ctl.Yield;
         if (!eq(t.costumeName(), "nil")) { f.pc = 3; continue; }
         rt.stopOtherScripts(t, rt.activeThread);
-        if (!eq(G.v.quitmatch, "1")) { f.pc = 4; continue; }
-        t.hide();
-        f.w = rt.broadcastStart("Transition") ?? undefined; if (!f.w) { f.pc = 6; continue; }
-      case 5:
-        { const c = rt.broadcastWait(f.w!); if (c !== null) { f.pc = 5; return c; } f.w = undefined; }
-      case 6:
-        rt.broadcast("ResultsScreen");
-        return Ctl.End;
-      case 4:
+        if (eq(G.v.quitmatch, "1")) {
+          t.hide();
+          return Ctl.End;
+        }
         t.setEffect("ghost", "0");
         t.switchCostume("final");
         t.show();
         t.goToFrontBack("back");
         rt.startSound(t, "se_common_finishhit");
-        if (!((eq(item(G.l.scores, "1"), "0") && lt(G.v.memory, "6")) || (lt("6", G.v.memory) && gt(item(G.l.scores, "2"), item(G.l.scores, "1"))))) { f.pc = 8; continue; }
+        if (!((eq(item(G.l.scores, "1"), "0") && lt(G.v.memory, "6")) || (lt("6", G.v.memory) && gt(item(G.l.scores, "2"), item(G.l.scores, "1"))))) { f.pc = 5; continue; }
         t.setEffect("color", "100");
         f.l[2] = undefined;
-      case 9:
+      case 6:
         if (f.l[2] == null) f.l[2] = Math.round(10);
         f.l[2]--;
-        if (!(f.l[2]! >= 0)) { f.pc = 10; continue; }
+        if (!(f.l[2]! >= 0)) { f.pc = 7; continue; }
         t.setXY(num((num(G.v._1x) + num(rt.pickRandom("-8", "8")))), num((num(G.v._1y) + num(rt.pickRandom("-5", "5")))));
-        f.pc = 9; return Ctl.Yield;
-      case 10:
+        f.pc = 6; return Ctl.Yield;
+      case 7:
         f.l[3] = undefined;
-      case 11:
+      case 8:
         if (f.l[3] == null) f.l[3] = Math.round(10);
         f.l[3]--;
-        if (!(f.l[3]! >= 0)) { f.pc = 12; continue; }
+        if (!(f.l[3]! >= 0)) { f.pc = 9; continue; }
         t.setXY(num((num(G.v._1x) + num(rt.pickRandom("-8", "8")))), num((num(G.v._1y) + num(rt.pickRandom("-5", "5")))));
         t.changeEffect("ghost", "10");
-        f.pc = 11; return Ctl.Yield;
-      case 12:
+        f.pc = 8; return Ctl.Yield;
+      case 9:
         t.clearEffects();
         t.hide();
         t.goToFrontBack("front");
         t.switchCostume("costume1");
         rt.createClone(t, "_myself_");
         t.switchCostume("nil");
-        f.pc = 7; continue;
-      case 8:
+        f.pc = 4; continue;
+      case 5:
         t.setEffect("color", "0");
         f.l[4] = undefined;
-      case 13:
+      case 10:
         if (f.l[4] == null) f.l[4] = Math.round(10);
         f.l[4]--;
-        if (!(f.l[4]! >= 0)) { f.pc = 14; continue; }
+        if (!(f.l[4]! >= 0)) { f.pc = 11; continue; }
         t.setXY(num((num(G.v._2x) + num(rt.pickRandom("-8", "8")))), num((num(G.v._2y) + num(rt.pickRandom("-5", "5")))));
-        f.pc = 13; return Ctl.Yield;
-      case 14:
+        f.pc = 10; return Ctl.Yield;
+      case 11:
         f.l[5] = undefined;
-      case 15:
+      case 12:
         if (f.l[5] == null) f.l[5] = Math.round(10);
         f.l[5]--;
-        if (!(f.l[5]! >= 0)) { f.pc = 16; continue; }
+        if (!(f.l[5]! >= 0)) { f.pc = 13; continue; }
         t.setXY(num((num(G.v._2x) + num(rt.pickRandom("-8", "8")))), num((num(G.v._2y) + num(rt.pickRandom("-5", "5")))));
         t.changeEffect("ghost", "10");
-        f.pc = 15; return Ctl.Yield;
-      case 16:
+        f.pc = 12; return Ctl.Yield;
+      case 13:
         t.clearEffects();
         t.hide();
         t.goToFrontBack("front");
@@ -875,22 +870,22 @@ export function build(rt: Runtime) {
         t.switchCostume("costume1");
         rt.createClone(t, "_myself_");
         t.switchCostume("nil");
-      case 7:
+      case 4:
         t.goToFrontBack("front");
         f.l[6] = rt.currentMSecs; f.l[7] = Math.max(0, 1000 * 1);
-        rt.requestRedraw(); f.pc = 17; return Ctl.Yield;
-      case 17:
+        rt.requestRedraw(); f.pc = 14; return Ctl.Yield;
+      case 14:
         if (rt.currentMSecs - f.l[6]! < f.l[7]!) return Ctl.Yield;
         t.hide();
         t.clearEffects();
         f.l[8] = rt.currentMSecs; f.l[9] = Math.max(0, 1000 * 1.4);
-        rt.requestRedraw(); f.pc = 18; return Ctl.Yield;
-      case 18:
+        rt.requestRedraw(); f.pc = 15; return Ctl.Yield;
+      case 15:
         if (rt.currentMSecs - f.l[8]! < f.l[9]!) return Ctl.Yield;
-        f.w = rt.broadcastStart("Transition") ?? undefined; if (!f.w) { f.pc = 20; continue; }
-      case 19:
-        { const c = rt.broadcastWait(f.w!); if (c !== null) { f.pc = 19; return c; } f.w = undefined; }
-      case 20:
+        f.w = rt.broadcastStart("Transition") ?? undefined; if (!f.w) { f.pc = 17; continue; }
+      case 16:
+        { const c = rt.broadcastWait(f.w!); if (c !== null) { f.pc = 16; return c; } f.w = undefined; }
+      case 17:
         if (eq(G.v.gamemode, "2")) {
           if (eq(G.v._1HP, "0")) {
             G.v.campaignfight_Num = num(G.v.campaignfight_Num) + -1;

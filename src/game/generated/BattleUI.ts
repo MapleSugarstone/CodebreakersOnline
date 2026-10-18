@@ -990,22 +990,9 @@ export function build(rt: Runtime) {
       switch (f.pc) {
       case 0:
         if (!eq(t.costumeName(), "nil")) { f.pc = 2; continue; }
-        if (!eq(G.v.quitmatch, "1")) { f.pc = 3; continue; }
-        G.v.quitmatch = "0";
-        G.v.music = "0";
-        rt.stopAllSounds();
-        f.l[0] = rt.currentMSecs; f.l[1] = Math.max(0, 1000 * 1);
-        rt.requestRedraw(); f.pc = 4; return Ctl.Yield;
-      case 4:
-        if (rt.currentMSecs - f.l[0]! < f.l[1]!) return Ctl.Yield;
-        f.w = rt.broadcastStart("Transition") ?? undefined; if (!f.w) { f.pc = 6; continue; }
-      case 5:
-        { const c = rt.broadcastWait(f.w!); if (c !== null) { f.pc = 5; return c; } f.w = undefined; }
-      case 6:
-        G.v.music = "1";
-        rt.broadcast("CSS");
-        return Ctl.End;
-      case 3:
+        if (eq(G.v.quitmatch, "1")) {
+          return Ctl.End;
+        }
         if (eq(G.v.char1, "32")) {
           G.v.char1 = "22";
         }
@@ -1033,35 +1020,35 @@ export function build(rt: Runtime) {
           G.v.Daily_Champion = t.v.code;
           rt.showVariable("Daily_Champion");
         }
-        f.l[2] = rt.currentMSecs; f.l[3] = Math.max(0, 1000 * 1.4);
-        rt.requestRedraw(); f.pc = 7; return Ctl.Yield;
-      case 7:
-        if (rt.currentMSecs - f.l[2]! < f.l[3]!) return Ctl.Yield;
+        f.l[0] = rt.currentMSecs; f.l[1] = Math.max(0, 1000 * 1.4);
+        rt.requestRedraw(); f.pc = 3; return Ctl.Yield;
+      case 3:
+        if (rt.currentMSecs - f.l[0]! < f.l[1]!) return Ctl.Yield;
         G.v.music = "2";
-      case 8:
-        if (!(rt.keyPressed("n") || rt.keyPressed("m"))) { f.pc = 8; return Ctl.Yield; }
+      case 4:
+        if (!(rt.keyPressed("n") || rt.keyPressed("m"))) { f.pc = 4; return Ctl.Yield; }
         rt.hideVariable("Score");
-        if (!((eq(G.v.weekly, "1") && eq(G.v.whoWon, "2")) || eq(G.v.weekly, "0"))) { f.pc = 10; continue; }
+        if (!((eq(G.v.weekly, "1") && eq(G.v.whoWon, "2")) || eq(G.v.weekly, "0"))) { f.pc = 6; continue; }
         G.v.music = "0";
         rt.stopAllSounds();
-        f.w = rt.broadcastStart("Transition") ?? undefined; if (!f.w) { f.pc = 12; continue; }
-      case 11:
-        { const c = rt.broadcastWait(f.w!); if (c !== null) { f.pc = 11; return c; } f.w = undefined; }
-      case 12:
+        f.w = rt.broadcastStart("Transition") ?? undefined; if (!f.w) { f.pc = 8; continue; }
+      case 7:
+        { const c = rt.broadcastWait(f.w!); if (c !== null) { f.pc = 7; return c; } f.w = undefined; }
+      case 8:
         G.v.music = "1";
         rt.broadcast("CSS");
-        f.pc = 9; continue;
-      case 10:
+        f.pc = 5; continue;
+      case 6:
         rt.hideVariable("Daily_Champion");
         rt.hideVariable("Daily_Highscore");
         G.v.music = "0";
         rt.stopAllSounds();
-        f.w = rt.broadcastStart("Transition") ?? undefined; if (!f.w) { f.pc = 14; continue; }
-      case 13:
-        { const c = rt.broadcastWait(f.w!); if (c !== null) { f.pc = 13; return c; } f.w = undefined; }
-      case 14:
-        rt.broadcast("nextChallenger");
+        f.w = rt.broadcastStart("Transition") ?? undefined; if (!f.w) { f.pc = 10; continue; }
       case 9:
+        { const c = rt.broadcastWait(f.w!); if (c !== null) { f.pc = 9; return c; } f.w = undefined; }
+      case 10:
+        rt.broadcast("nextChallenger");
+      case 5:
         f.pc = 1; continue;
       case 2:
         rt.deleteThisClone(t);

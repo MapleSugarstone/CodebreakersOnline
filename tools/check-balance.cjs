@@ -17,6 +17,8 @@ const FIXED = {
     (s) => s.startsWith('WHEN I RECEIVE "Countdown"') && s.includes('dmgmod'),
     (s) => /^WHEN I RECEIVE "[12]Hit"/.test(s) && s.includes('@Canvas'),
   ],
+  // The pause menu's quit script, added to this sprite because the stage stops its own scripts on ResultsScreen.
+  Transition: [(s) => s.startsWith('WHEN I RECEIVE "QuitMatch"')],
 };
 // Costumes this build takes from CB on purpose: Canvas's, which PK redrew with a built-in head.
 const CB_COSTUMES = { Costumes: (c) => c.name.includes('31`') };

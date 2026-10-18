@@ -103,10 +103,40 @@ export function build(rt: Runtime) {
     }
   });
 
+  /** when I receive QUITMATCH #3 */
+  const S3 = rt.unit("Transition/when I receive QUITMATCH #3", (th, f) => {
+    const t = th.target as T;
+    for (;;) {
+      switch (f.pc) {
+      case 0:
+        G.v.quitmatch = "1";
+        rt.broadcast("Endgame");
+        f.w = rt.broadcastStart("Transition") ?? undefined; if (!f.w) { f.pc = 2; continue; }
+      case 1:
+        { const c = rt.broadcastWait(f.w!); if (c !== null) { f.pc = 1; return c; } f.w = undefined; }
+      case 2:
+        rt.broadcast("ResultsScreen");
+        f.l[0] = rt.currentMSecs; f.l[1] = Math.max(0, 1000 * 1);
+        rt.requestRedraw(); f.pc = 3; return Ctl.Yield;
+      case 3:
+        if (rt.currentMSecs - f.l[0]! < f.l[1]!) return Ctl.Yield;
+        f.w = rt.broadcastStart("Transition") ?? undefined; if (!f.w) { f.pc = 5; continue; }
+      case 4:
+        { const c = rt.broadcastWait(f.w!); if (c !== null) { f.pc = 4; return c; } f.w = undefined; }
+      case 5:
+        G.v.music = "1";
+        rt.broadcast("CSS");
+        G.v.quitmatch = "0";
+        return Ctl.End;
+      }
+    }
+  });
+
   const scripts: ScriptDef[] = [
     { hat: 'flag', top: "cJd", plain: s0 as (t: Target) => void },
     { hat: 'broadcast', msg: "TRANSITION", top: "$3yd", unit: S1 },
     { hat: 'broadcast', msg: "TRANSITION2", top: "$3ys", unit: S2 },
+    { hat: 'broadcast', msg: "QUITMATCH", top: "$51y", unit: S3 },
   ];
   return { scripts };
 }

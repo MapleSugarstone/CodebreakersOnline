@@ -9,7 +9,8 @@ import { RollbackSession, snapshotHash } from '../src/net/rollback.ts';
 import { saveSnapshot } from '../src/engine/snapshot.ts';
 import { Rng } from '../src/engine/rng.ts';
 import type { PlayerInput } from '../src/engine/io.ts';
-import { SEAT_KEYS } from '../src/client/controls.ts';
+import { SEAT_KEYS, translateKeys } from '../src/client/controls.ts';
+import { seatScreen } from '../src/game/screens.ts';
 
 const peers = Math.min(2, Number(process.argv[2] ?? 2));
 const frames = Number(process.argv[3] ?? 2400);
@@ -22,7 +23,33 @@ const seed = scenario.seed;
 const FRAME = 1000 / 30;
 
 /** Seat 1 plays the scenario's Player 2 keys, and seat 0 plays every other key. */
+/**
+ * With --menus, both players tap arrows on the main menu, then on Fight Settings, with their keys translated by
+ * screen as the page does (src/game/screens.ts): shared menus take everyone's keys as Player 1's.
+ */
+function menuScript(seat: number): (tick: number) => PlayerInput {
+  const rng = new Rng(500 + seat);
+  const arrows = ['left arrow', 'right arrow', 'up arrow', 'down arrow'];
+  let tapUntil = -1;
+  let key = '';
+  return (tick) => {
+    const rt = sessions[seat].rt;
+    let raw: string[] = [];
+    if (seat === 0 && tick < 60) raw = ['`'];
+    else if (seat === 0 && ((tick >= 300 && tick < 303) || (tick >= 1300 && tick < 1303))) raw = ['N'];
+    else if (tick > 320 && tick < 2300 && !(tick > 1290 && tick < 1320)) {
+      if (tick >= tapUntil + 12 && rng.next() < 0.15) {
+        key = arrows[Math.floor(rng.next() * arrows.length)];
+        tapUntil = tick + 3;
+      }
+      if (tick < tapUntil) raw = [key];
+    }
+    return { keys: translateKeys(raw, seatScreen(rt) ? seat : 0) };
+  };
+}
+
 function scriptFor(seat: number): (tick: number) => PlayerInput {
+  if (process.argv.includes('--menus')) return menuScript(seat);
   const tl = new InputTimeline(scenario.events);
   const p2 = new Set(SEAT_KEYS[1]);
   return (tick) => {
@@ -86,9 +113,11 @@ if (jumps) {
       for (const t of rt.drawList) {
         if (!t.visible) continue;
         const key = `${t.name}#${t.sprite.clones.indexOf(t)}`;
-        targets.set(key, `${Math.round(t.x)},${Math.round(t.y)},${t.costumeName()}`);
+        targets.set(key, `${Math.round(t.x)},${Math.round(t.y)},${t.costumeName()},${Math.round(t.effects.ghost)},${Math.round(t.effects.brightness)}`);
       }
-      const rec = { menu: String(rt.stage.v[rt.stage.sprite.def.varNames!.menu]), targets };
+      const menu = String(rt.stage.v[rt.stage.sprite.def.varNames!.menu]);
+      targets.set('(menu selection)', menu);
+      const rec = { menu, targets };
       if (!resim) firstSeen[i].set(f, rec);
       finalSeen[i].set(f, rec);
     };

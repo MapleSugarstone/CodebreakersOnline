@@ -9,6 +9,7 @@ import type { SeatInfo, StartInfo } from '../net/protocol.ts';
 import { report, reportContext } from '../net/report.ts';
 import { fromBase64, toBase64 } from '../net/wire.ts';
 import { translateKeys } from './controls.ts';
+import { seatScreen } from '../game/screens.ts';
 import { Game, skipLoadScreen, startFixedLoop } from './game.ts';
 import type { LocalInput } from './input.ts';
 
@@ -160,7 +161,9 @@ export class OnlineGame {
     this.stop = startFixedLoop(
       () => {
         const pressed = input.sampleKeys();
-        const p: PlayerInput = { keys: skipLoadScreen(translateKeys(pressed, this.local), this.session.frame) };
+        // Shared menus take everyone's keys as Player 1's; character select and matches take each seat's own.
+        const seat = seatScreen(this.game.rt) ? this.local : 0;
+        const p: PlayerInput = { keys: skipLoadScreen(translateKeys(pressed, seat), this.session.frame) };
         // Only the first seat drives the shared mouse pointer.
         if (this.local === this.start.seats[0] && input.mouseDirty) {
           p.mouse = { ...input.mouse };

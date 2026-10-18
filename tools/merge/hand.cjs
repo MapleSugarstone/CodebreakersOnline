@@ -426,17 +426,30 @@ end`);
     log.push(`Canvas: CB's ${n} headless costumes, Extras picks kept through matches`);
   }
 
-  // Pause menu. Its "Character select" broadcasts QuitMatch (see src/game/pause.ts). That ends the match through
-  // Endgame, so every sprite cleans up as at a normal finish, then skips the KO effect and the results screen.
+  // Pause menu. Its "Character select" broadcasts QuitMatch (see src/game/pause.ts). One script runs the whole quit,
+  // so it works in every mode: Endgame and ResultsScreen let every sprite clean up as after a normal finish, while
+  // the KO effect and the results screen stand aside, and then character select opens. The script lives in the
+  // Transition sprite because the stage stops its own other scripts on ResultsScreen. The wait lets the first
+  // transition finish sliding out; two at once fight over the sprite and take seconds.
   {
-    const st = T(dst, 'Stage');
+    const st = T(dst, 'Stage'), tr = T(dst, 'Transition');
     st.variables[M.ids.next()] = ['quitmatch', 0];
-    const body = code(st, '$quitmatch = "1"\nbroadcast bcast("Endgame")');
+    const body = code(tr, [
+      '$quitmatch = "1"',
+      'broadcast bcast("Endgame")',
+      'broadcast and wait bcast("Transition")',
+      'broadcast bcast("ResultsScreen")',
+      'control_wait(DURATION="1")',
+      'broadcast and wait bcast("Transition")',
+      '$music = "1"',
+      'broadcast bcast("CSS")',
+      '$quitmatch = "0"',
+    ].join('\n'));
     const bid = Object.entries(st.broadcasts).find(([, n]) => n === 'QuitMatch')?.[0] ?? M.ids.next();
     st.broadcasts[bid] = 'QuitMatch';
     const hat = M.ids.next();
-    st.blocks[hat] = { opcode: 'event_whenbroadcastreceived', next: body, parent: null, inputs: {}, fields: { BROADCAST_OPTION: ['QuitMatch', bid] }, shadow: false, topLevel: true, x: 0, y: 0 };
-    st.blocks[body].parent = hat;
+    tr.blocks[hat] = { opcode: 'event_whenbroadcastreceived', next: body, parent: null, inputs: {}, fields: { BROADCAST_OPTION: ['QuitMatch', bid] }, shadow: false, topLevel: true, x: 0, y: 0 };
+    tr.blocks[body].parent = hat;
     const cd = L.findScripts(st, 'WHEN I RECEIVE "Countdown"')[0];
     before(st, st.blocks[cd].next, '$quitmatch = "0"');
 
@@ -444,14 +457,12 @@ end`);
     const end = L.findScripts(fx, 'WHEN I RECEIVE "Endgame"').find(id => L.scriptText(fx, id).includes('COSTUME="final"'));
     if (!end) throw new Error('FX: no Endgame script with the KO effect');
     after(fx, L.findStmt(fx, end, 'control_stop(STOP_OPTION:"other scripts in sprite")'),
-      'if ($quitmatch = "1") then\n  looks_hide()\n  broadcast and wait bcast("Transition")\n  broadcast bcast("ResultsScreen")\n  control_stop(STOP_OPTION:"this script")\nend');
+      'if ($quitmatch = "1") then\n  looks_hide()\n  control_stop(STOP_OPTION:"this script")\nend');
 
     const ui = T(dst, 'BattleUI');
     const res = L.findScripts(ui, 'WHEN I RECEIVE "ResultsScreen"').find(id => L.scriptText(ui, id).includes('call "Results"()'));
     if (!res) throw new Error('BattleUI: no results screen script');
-    before(ui, L.findStmt(ui, res, 'if ($char1 = "32") then'),
-      // The wait lets the previous transition finish sliding out. Two at once fight over the sprite and take seconds.
-      'if ($quitmatch = "1") then\n  $quitmatch = "0"\n  $music = "0"\n  sound_stopallsounds()\n  control_wait(DURATION="1")\n  broadcast and wait bcast("Transition")\n  $music = "1"\n  broadcast bcast("CSS")\n  control_stop(STOP_OPTION:"this script")\nend');
+    before(ui, L.findStmt(ui, res, 'if ($char1 = "32") then'), 'if ($quitmatch = "1") then\n  control_stop(STOP_OPTION:"this script")\nend');
     log.push('Pause menu: QuitMatch ends the match and goes to character select');
   }
 }

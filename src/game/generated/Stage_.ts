@@ -1157,12 +1157,6 @@ export function build(rt: Runtime) {
     }
   });
 
-  /** when I receive QUITMATCH #23 */
-  function s23(t: T): void {
-    G.v.quitmatch = "1";
-    rt.broadcast("Endgame");
-  }
-
   /** define eqHP (warp context) */
   const U_eqHP_warp = rt.unit("Stage/define eqHP (warp context)", (th, f) => {
     const t = th.target as T;
@@ -1273,7 +1267,6 @@ export function build(rt: Runtime) {
     { hat: 'broadcast', msg: "CUTSCENE", top: "bqd", unit: S20 },
     { hat: 'broadcast', msg: "TRAINING", top: "$3z2", unit: S21 },
     { hat: 'broadcast', msg: "ASSETLOAD", top: "i", unit: S22 },
-    { hat: 'broadcast', msg: "QUITMATCH", top: "$51r", plain: s23 as (t: Target) => void },
   ];
   return { scripts };
 }
