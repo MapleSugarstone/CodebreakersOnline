@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import { createPort, InputTimeline, type Scenario } from './lib/port.ts';
 import { saveSnapshot, loadSnapshot } from '../src/engine/snapshot.ts';
+import { fightRunning } from '../src/game/screens.ts';
 
 const sc: Scenario = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
 const rt = createPort(sc.seed);
@@ -18,7 +19,7 @@ for (let f = 1; f <= sc.frames; f++) {
   const inp = tl.inputsFor(f);
   let t = performance.now();
   rt.stepFrame(inp);
-  const inMatch = rt.stage.v.Main_State === 'Match';
+  const inMatch = fightRunning(rt);
   const dt = performance.now() - t;
   t = performance.now();
   const s = saveSnapshot(rt);

@@ -225,8 +225,13 @@ export class RenderModel {
 
   // ---------------------------------------------------------------- touching
 
-  /** Stage point to skin texture coordinates, reproducing the renderer's 32-bit float storage. */
-  private localPoint(t: Target, x: number, y: number): Float32Array {
+  /**
+   * What one target's point tests need: its silhouette and inverse model matrix, as float32. A touching test checks
+   * many points against the same targets, so this is worked out once per target per test.
+   */
+  private tester(t: Target): PointTester | null {
+    const sil = this.silhouettes[t.sprite.costumes[t.currentCostume].skin];
+    if (!sil) return null;
     const m = this.model(t);
     const M = new Float32Array(16);
     M[0] = m.m0;
@@ -237,17 +242,26 @@ export class RenderModel {
     M[12] = m.m12;
     M[13] = m.m13;
     M[15] = 1;
-    const inv = inverse4(M);
-    const lp = new Float32Array(2);
+    const fx = t.effects;
+    const anyEffect = !!(fx.color || fx.fisheye || fx.whirl || fx.pixelate || fx.mosaic || fx.brightness || fx.ghost);
+    return { t, sil, inv: inverse4(M), anyEffect, nearest: this.useNearest(t) };
+  }
+
+  private lp = new Float32Array(2);
+
+  /** Stage point to skin texture coordinates and the silhouette test there, with the renderer's float32 storage. */
+  private testPoint(p: PointTester, x: number, y: number): boolean {
+    const inv = p.inv, lp = this.lp, sil = p.sil;
     const d = x * inv[3] + y * inv[7] + inv[15];
     lp[0] = 0.5 - (x * inv[0] + y * inv[4] + inv[12]) / d;
     lp[1] = (x * inv[1] + y * inv[5] + inv[13]) / d + 0.5;
     if (Math.abs(lp[0]) < 1e-6) lp[0] = 0;
     if (Math.abs(lp[1]) < 1e-6) lp[1] = 0;
-    const fx = t.effects;
-    const anyEffect = fx.color || fx.fisheye || fx.whirl || fx.pixelate || fx.mosaic || fx.brightness || fx.ghost;
-    if (anyEffect && lp[0] >= 0 && lp[0] < 1 && lp[1] >= 0 && lp[1] < 1) this.effectTransform(t, lp);
-    return lp;
+    if (p.anyEffect && lp[0] >= 0 && lp[0] < 1 && lp[1] >= 0 && lp[1] < 1) this.effectTransform(p.t, lp);
+    const px = Math.floor(lp[0] * (sil.w - 1));
+    const py = Math.floor(lp[1] * (sil.h - 1));
+    if (p.nearest) return alphaAt(sil, px, py);
+    return alphaAt(sil, px, py) || alphaAt(sil, px + 1, py) || alphaAt(sil, px, py + 1) || alphaAt(sil, px + 1, py + 1);
   }
 
   /** The original's effect transform: mosaic, pixelate, whirl, then fisheye, each stored as float32. */
@@ -298,19 +312,10 @@ export class RenderModel {
     return sx > 99 && sx < 101 && sy > 99 && sy < 101;
   }
 
-  private pointTouching(t: Target, x: number, y: number): boolean {
-    const sil = this.silhouettes[t.sprite.costumes[t.currentCostume].skin];
-    if (!sil) return false;
-    const lp = this.localPoint(t, x, y);
-    const px = Math.floor(lp[0] * (sil.w - 1));
-    const py = Math.floor(lp[1] * (sil.h - 1));
-    if (this.useNearest(t)) return alphaAt(sil, px, py);
-    return alphaAt(sil, px, py) || alphaAt(sil, px + 1, py) || alphaAt(sil, px, py + 1) || alphaAt(sil, px + 1, py + 1);
-  }
-
   /** Touch test against a single stage point; visibility is not checked, as in the original. */
   touchingPoint(t: Target, x: number, y: number): boolean {
-    return this.pointTouching(t, x, y);
+    const p = this.tester(t);
+    return p ? this.testPoint(p, x, y) : false;
   }
 
   /** Pixel-level overlap between `t` and any visible candidate. */
@@ -341,17 +346,28 @@ export class RenderModel {
       top: Math.max(m.top, r.top),
       bottom: Math.min(m.bottom, r.bottom),
     }));
+    const self2 = this.tester(t);
+    if (!self2) return false;
+    const others = hitTargets.map((c) => this.tester(c));
     for (let x = b.left; x <= b.right; x++) {
       for (let y = b.bottom; y <= b.top; y++) {
-        if (this.pointTouching(t, x, y)) {
-          for (const c of hitTargets) {
-            if (this.pointTouching(c, x, y)) return true;
+        if (this.testPoint(self2, x, y)) {
+          for (const o of others) {
+            if (o && this.testPoint(o, x, y)) return true;
           }
         }
       }
     }
     return false;
   }
+}
+
+interface PointTester {
+  t: Target;
+  sil: Silhouette;
+  inv: Float32Array;
+  anyEffect: boolean;
+  nearest: boolean;
 }
 
 /** General 4x4 inverse in the same operation order as the renderer's matrix library, stored as float32. */
