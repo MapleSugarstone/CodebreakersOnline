@@ -165,10 +165,8 @@ export class OnlineGame {
         const seat = seatScreen(this.game.rt) ? this.local : 0;
         const p: PlayerInput = { keys: skipLoadScreen(translateKeys(pressed, seat), this.session.frame) };
         // Only the first seat drives the shared mouse pointer.
-        if (this.local === this.start.seats[0] && input.mouseDirty) {
-          p.mouse = { ...input.mouse };
-          input.mouseDirty = false;
-        }
+        const mouse = this.local === this.start.seats[0] ? input.sampleMouse() : undefined;
+        if (mouse) p.mouse = mouse;
         if (this.game.question.pendingAnswer !== undefined) {
           p.answer = this.game.question.pendingAnswer;
           this.game.question.pendingAnswer = undefined;
@@ -176,7 +174,7 @@ export class OnlineGame {
         if (!this.session.tick(p)) {
           // The frame did not advance, so offer the same input again next tick.
           input.retap(pressed);
-          if (p.mouse) input.mouseDirty = true;
+          if (p.mouse) input.remouse(p.mouse);
           if (p.answer !== undefined) this.game.question.pendingAnswer ??= p.answer;
         }
       },

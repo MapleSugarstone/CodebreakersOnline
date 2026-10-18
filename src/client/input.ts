@@ -45,6 +45,7 @@ export class LocalInput {
     this.stageEl.addEventListener('pointerdown', (e) => {
       move(e);
       this.mouse.down = true;
+      this.clicked = true;
       this.mouseDirty = true;
     });
     window.addEventListener('pointerup', (e) => {
@@ -72,5 +73,24 @@ export class LocalInput {
   /** Returns sampled keys whose frame did not run, so the next sample includes them. */
   retap(keys: string[]): void {
     for (const k of keys) this.tapped.add(k);
+  }
+
+  /** Set by a press, so a click released before the next sample still reaches the game. */
+  private clicked = false;
+
+  /** The pointer for one game frame, or undefined when it has not changed since the previous call. */
+  sampleMouse(): { x: number; y: number; down: boolean } | undefined {
+    if (!this.mouseDirty) return undefined;
+    const m = { ...this.mouse, down: this.mouse.down || this.clicked };
+    // A click released within one frame reads as down for that frame and up on the next.
+    this.mouseDirty = this.clicked && !this.mouse.down;
+    this.clicked = false;
+    return m;
+  }
+
+  /** Returns a sampled pointer whose frame did not run, so the next sample repeats it. */
+  remouse(m: { down: boolean }): void {
+    if (m.down && !this.mouse.down) this.clicked = true;
+    this.mouseDirty = true;
   }
 }

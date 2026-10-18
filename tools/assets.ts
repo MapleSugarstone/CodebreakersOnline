@@ -5,6 +5,7 @@
 import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
+import { adpcmToPcm, isAdpcm } from './lib/adpcm.ts';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const meta = JSON.parse(fs.readFileSync(path.join(ROOT, 'out/ref-meta.json'), 'utf8'));
@@ -45,10 +46,14 @@ for (const t of meta) {
     }
   }
 }
+let converted = 0;
 for (const t of project.targets) {
   for (const s of t.sounds) {
-    fs.copyFileSync(path.join(ROOT, 'sb3', s.md5ext), path.join(soundDir, s.md5ext));
+    const data = fs.readFileSync(path.join(ROOT, 'sb3', s.md5ext));
+    const adpcm = isAdpcm(data);
+    if (adpcm) converted++;
+    fs.writeFileSync(path.join(soundDir, s.md5ext), adpcm ? adpcmToPcm(data) : data);
     sounds++;
   }
 }
-console.log(`svg ${svgs}, bitmap ${bitmaps}, sounds ${sounds}, shared fonts ${fonts.size}`);
+console.log(`svg ${svgs}, bitmap ${bitmaps}, sounds ${sounds} (${converted} from ADPCM), shared fonts ${fonts.size}`);

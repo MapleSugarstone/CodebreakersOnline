@@ -569,8 +569,9 @@ function loadImage(url: string): Promise<HTMLImageElement> {
 function imageFrom(url: string): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
     const img = new Image();
-    // Decoding now, behind the lobby, keeps the first draw of each costume from stalling a frame.
-    img.onload = () => void img.decode().catch(() => {}).then(() => resolve(img));
+    // Decoding now, behind the lobby, keeps the first draw of each costume from stalling a frame. decode() never
+    // settles while the page is not rendering, as in a background tab, so loading goes on after a short wait.
+    img.onload = () => void Promise.race([img.decode().catch(() => {}), new Promise((r) => setTimeout(r, 250))]).then(() => resolve(img));
     img.onerror = () => reject(new Error(`failed to load ${url}`));
     img.src = url;
   });

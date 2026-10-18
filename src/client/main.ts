@@ -54,10 +54,8 @@ window.addEventListener('keydown', resumeAudio);
 
 function sampleLocal(): PlayerInput {
   const p0: PlayerInput = { keys: skipLoadScreen(input.sampleKeys(), game.rt.frame) };
-  if (input.mouseDirty) {
-    p0.mouse = { ...input.mouse };
-    input.mouseDirty = false;
-  }
+  const mouse = input.sampleMouse();
+  if (mouse) p0.mouse = mouse;
   if (game.question.pendingAnswer !== undefined) {
     p0.answer = game.question.pendingAnswer;
     game.question.pendingAnswer = undefined;

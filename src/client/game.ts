@@ -88,67 +88,69 @@ export class Game {
   }
 }
 
-/**
- * Frame scheduler run in a worker: one message per frame, due every FRAME_MS, posted with its due
- * time. Due times advance by exactly FRAME_MS, so timer lateness never accumulates into drift.
- */
-const PACER = `
-const step = ${FRAME_MS};
-const clock = () => performance.timeOrigin + performance.now();
-let next = clock() + step;
-const loop = () => {
-  const now = clock();
-  if (now - next > 250) next = now;
-  while (now >= next) {
-    postMessage(next);
-    next += step;
-  }
-  setTimeout(loop, Math.max(0, Math.min(4, next - now)));
-};
-setTimeout(loop, 4);
-`;
+/** Runs in a worker and posts a message every 4 ms, which keeps arriving in a background tab. */
+const HEARTBEAT = 'const beat = () => { postMessage(0); setTimeout(beat, 4); }; beat();';
+
+/** How early a frame may start, so timing noise in screen refreshes cannot push a frame to the next refresh. */
+const SLACK_MS = 4;
+/** How late a frame may get before the heartbeat runs it, which is longer than a refresh at 50 Hz or more. */
+const LATE_MS = 25;
 
 /**
- * Calls `tick` then `after` once per frame, every FRAME_MS like the original. A worker drives the
- * timing because animation frames stop and page timers slow down in background tabs, and an
- * online match must keep running there.
+ * Calls `tick` once per frame, every FRAME_MS like the original, then `after` once if any frame ran.
+ * Screen refreshes drive the loop, so each frame starts on a refresh and frames stay evenly spaced.
+ * Animation frames stop in background tabs and slow down on some screens, so a worker's heartbeat
+ * runs any frame that is LATE_MS overdue, or due at all once refreshes stop, and an online match keeps running.
  */
 export function startFixedLoop(tick: () => void, after: () => void): () => void {
   const clock = () => performance.timeOrigin + performance.now();
-  const frame = (due: number) => {
-    // Frames that waited behind a long main-thread stall are dropped rather than played back at once.
-    if (clock() - due > 200) return;
-    tick();
-    after();
-  };
+  let next = clock() + FRAME_MS;
   let stopped = false;
+  const run = (now: number) => {
+    // After a long stall the loop skips ahead rather than playing the missed frames back at once.
+    if (now - next > 250) next = now;
+    let ran = false;
+    while (now >= next - SLACK_MS) {
+      tick();
+      next += FRAME_MS;
+      ran = true;
+    }
+    if (ran) after();
+  };
+  let raf = 0;
+  let lastRefresh = 0;
+  const refresh = (ts: number) => {
+    if (stopped) return;
+    lastRefresh = clock();
+    run(performance.timeOrigin + ts);
+    raf = requestAnimationFrame(refresh);
+  };
+  raf = requestAnimationFrame(refresh);
+  const beat = () => {
+    const now = clock();
+    if (!stopped && now > next + (now - lastRefresh < 100 ? LATE_MS : 0)) run(now);
+  };
   let heard = false;
   let timer = 0;
-  const worker = new Worker(URL.createObjectURL(new Blob([PACER], { type: 'text/javascript' })));
-  worker.onmessage = (e: MessageEvent<number>) => {
+  const worker = new Worker(URL.createObjectURL(new Blob([HEARTBEAT], { type: 'text/javascript' })));
+  worker.onmessage = () => {
     heard = true;
-    frame(e.data);
+    beat();
   };
-  // Some embedded browsers never start a worker made from a blob. The same pacing then runs on
-  // the page's own timers, which slow down while the tab is in the background.
+  // Some embedded browsers never start a worker made from a blob. The page's own timers then
+  // give the heartbeat, though they slow down while the tab is in the background.
   const fallback = window.setTimeout(() => {
     if (heard || stopped) return;
     worker.terminate();
-    let next = clock() + FRAME_MS;
     const loop = () => {
-      if (stopped) return;
-      const now = clock();
-      if (now - next > 250) next = now;
-      while (now >= next) {
-        frame(next);
-        next += FRAME_MS;
-      }
-      timer = window.setTimeout(loop, Math.max(0, Math.min(4, next - now)));
+      beat();
+      if (!stopped) timer = window.setTimeout(loop, 4);
     };
     loop();
   }, 500);
   return () => {
     stopped = true;
+    cancelAnimationFrame(raf);
     worker.terminate();
     clearTimeout(fallback);
     clearTimeout(timer);

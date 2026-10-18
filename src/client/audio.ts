@@ -59,6 +59,8 @@ export class AudioOut {
   private urgent: [number, number][] = [];
   private background: [number, number][] = [];
   private loading = 0;
+  /** One decode per file, because sprites share sound files. */
+  private decoded = new Map<string, Promise<AudioBuffer>>();
   /** Play events for sounds that had not loaded yet, by voice key. */
   private pending = new Map<string, SoundEvent>();
   private onProgress?: (done: number, total: number) => void;
@@ -102,18 +104,31 @@ export class AudioOut {
       const [si, i] = job;
       const file = this.files[si][i];
       this.loading++;
-      void fetch(/^(blob|data|https?):/.test(file) ? file : `${this.base}${file}`)
-        .then((res) => res.arrayBuffer())
-        .then((data) => this.ctx.decodeAudioData(data))
+      let decoded = this.decoded.get(file);
+      if (!decoded) {
+        decoded = fetch(/^(blob|data|https?):/.test(file) ? file : `${this.base}${file}`)
+          .then((res) => res.arrayBuffer())
+          .then((data) => this.ctx.decodeAudioData(data));
+        this.decoded.set(file, decoded);
+      }
+      void decoded
         .then((buf) => (this.buffers[si][i] = buf), () => (this.buffers[si][i] = null))
         .finally(() => {
           this.loadState[si][i] = 2;
           this.loading--;
           this.onProgress?.(++this.loaded, this.total);
           this.arrived(si, i);
+          if (this.loaded === this.total) for (const r of this.done.splice(0)) r();
           this.pump();
         });
     }
+  }
+
+  private done: (() => void)[] = [];
+
+  /** Resolves once every sound has loaded or failed. */
+  allLoaded(): Promise<void> {
+    return this.loaded === this.total ? Promise.resolve() : new Promise((r) => this.done.push(r));
   }
 
   private arrived(si: number, i: number): void {
