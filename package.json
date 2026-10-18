@@ -1,0 +1,40 @@
+{
+  "name": "codebreakers-online",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Definitive edition of a block-based fighting game, then a browser port with rollback netplay.",
+  "scripts": {
+    "unpack": "unzip -o -q \"Codebreakers 1.5.1 - SSS2(1).sb3\" -d work/cb && unzip -o -q \"Project K 1.3.1.sb3\" -d work/pk",
+    "assets:menu": "node tools/stage-thumbs.cjs && node tools/classic-cards.cjs && node tools/daily-row.cjs",
+    "merge": "node tools/merge/merge.cjs",
+    "validate": "node tools/validate.cjs out/merged --quiet",
+    "check": "node tools/check-balance.cjs",
+    "pack": "node tools/pack.cjs out/merged out/Codebreakers-DE.sb3",
+    "build:sb3": "npm run merge && npm run validate && npm run check && npm run pack",
+    "test:asm": "node tools/merge/asm-test.cjs work/cb && node tools/merge/asm-test.cjs work/pk",
+    "extract": "node tools/extract.mjs out/Codebreakers-DE.sb3",
+    "ref:dump": "tsx tools/ref-dump.ts",
+    "transpile": "tsx tools/transpile/main.ts",
+    "assets": "tsx tools/assets.ts",
+    "refmath": "esbuild src/engine/dmath.ts --bundle --format=iife --global-name=DMATH --outfile=reference/dmath.js",
+    "typecheck": "tsc --noEmit",
+    "test:parity": "tsx tools/parity-all.ts 2",
+    "test:math": "tsx tools/dmath-test.ts",
+    "dev": "vite",
+    "build": "vite build",
+    "test:rollback": "tsx tools/rollback-test.ts tests/scenarios/campaign-44.json"
+  },
+  "devDependencies": {
+    "@scratch/scratch-render": "15.1.1",
+    "@scratch/scratch-svg-renderer": "15.1.1",
+    "@scratch/scratch-vm": "15.1.1",
+    "@types/node": "^26.6.5",
+    "esbuild": "^0.28.2",
+    "jszip": "3.10.1",
+    "playwright-core": "1.64.1",
+    "tsx": "^4.23.15",
+    "typescript": "5.9",
+    "vite": "^6.4.4"
+  }
+}

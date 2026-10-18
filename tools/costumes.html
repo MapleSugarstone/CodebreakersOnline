@@ -1,0 +1,27 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Costume viewer</title>
+<style>
+  body { background: #888; font: 12px sans-serif; margin: 8px; }
+  figure { display: inline-block; margin: 4px; background: #fff; vertical-align: top; }
+  figcaption { max-width: 240px; overflow-wrap: anywhere; }
+  img { max-width: 480px; max-height: 360px; display: block; background: repeating-conic-gradient(#ddd 0 25%, #fff 0 50%) 0 0 / 16px 16px; }
+</style>
+<div id="out"></div>
+<script>
+// ?p=work/cb&s=MenuUI&n=costume24,Classic1  (n optional, regex allowed with r=)
+const q = new URLSearchParams(location.search);
+fetch(`/${q.get('p')}/project.json`).then(r => r.json()).then(p => {
+  const t = p.targets.find(t => t.name === q.get('s'));
+  const names = q.get('n') ? q.get('n').split(',') : null;
+  const re = q.get('r') ? new RegExp(q.get('r')) : null;
+  const out = document.getElementById('out');
+  t.costumes.forEach((c, i) => {
+    if (names && !names.includes(c.name)) return;
+    if (re && !re.test(c.name)) return;
+    const f = document.createElement('figure');
+    f.innerHTML = `<img src="/${q.get('p')}/${c.md5ext}"><figcaption>${i + 1}: ${c.name} (${c.rotationCenterX | 0}, ${c.rotationCenterY | 0}) r${c.bitmapResolution || 1}</figcaption>`;
+    out.appendChild(f);
+  });
+});
+</script>

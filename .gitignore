@@ -1,0 +1,7 @@
+Notes
+work/
+out/
+*.sb3
+node_modules/
+public/assets/
+dist/
