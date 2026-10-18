@@ -47,6 +47,7 @@ export interface LobbyHandlers {
 export class Lobby {
   root: HTMLDivElement;
   private status: HTMLDivElement;
+  private progress: HTMLDivElement;
   private menu: HTMLDivElement;
   private room: HTMLDivElement;
   private codeOut: HTMLSpanElement;
@@ -131,7 +132,8 @@ export class Lobby {
     this.room.append(bar, this.seatList, opts, this.startBtn, this.waitNote, keysNote, leaveBtn);
 
     this.status = el('div', 'lobby-status');
-    panel.append(this.menu, this.room, this.status);
+    this.progress = el('div', 'lobby-progress');
+    panel.append(this.menu, this.room, this.status, this.progress);
     this.root.append(panel);
     parent.append(this.root);
 
@@ -179,6 +181,12 @@ export class Lobby {
 
   setStatus(text: string): void {
     this.status.textContent = text;
+  }
+
+  /** The asset warm-up count under the menu, gone once everything has loaded. */
+  setProgress(done: number, total: number): void {
+    const text = done >= total ? '' : `Loading images and sounds: ${Math.floor((done / total) * 100)}%`;
+    if (this.progress.textContent !== text) this.progress.textContent = text;
   }
 
   showMenu(): void {

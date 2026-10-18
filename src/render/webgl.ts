@@ -569,7 +569,8 @@ function loadImage(url: string): Promise<HTMLImageElement> {
 function imageFrom(url: string): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
     const img = new Image();
-    img.onload = () => resolve(img);
+    // Decoding now, behind the lobby, keeps the first draw of each costume from stalling a frame.
+    img.onload = () => void img.decode().catch(() => {}).then(() => resolve(img));
     img.onerror = () => reject(new Error(`failed to load ${url}`));
     img.src = url;
   });

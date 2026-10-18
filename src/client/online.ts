@@ -9,7 +9,7 @@ import type { SeatInfo, StartInfo } from '../net/protocol.ts';
 import { report, reportContext } from '../net/report.ts';
 import { fromBase64, toBase64 } from '../net/wire.ts';
 import { translateKeys } from './controls.ts';
-import { Game, startFixedLoop } from './game.ts';
+import { Game, skipLoadScreen, startFixedLoop } from './game.ts';
 import type { LocalInput } from './input.ts';
 
 /** Plays sounds once per frame even when a frame is simulated again after a correction. */
@@ -160,7 +160,7 @@ export class OnlineGame {
     this.stop = startFixedLoop(
       () => {
         const pressed = input.sampleKeys();
-        const p: PlayerInput = { keys: translateKeys(pressed, this.local) };
+        const p: PlayerInput = { keys: skipLoadScreen(translateKeys(pressed, this.local), this.session.frame) };
         // Only the first seat drives the shared mouse pointer.
         if (this.local === this.start.seats[0] && input.mouseDirty) {
           p.mouse = { ...input.mouse };

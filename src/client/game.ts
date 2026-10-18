@@ -11,6 +11,15 @@ import { Bubbles, ListMonitors, QuestionBox, VarMonitors } from './overlays.ts';
 
 export const ASSET_BASE = `${import.meta.env.BASE_URL}assets/`;
 
+/**
+ * Adds the game's own loading-screen skip key (backtick) for the first frames. The loading screen makes the
+ * original editor rasterize every costume, which the page does behind the lobby instead. The game reads the
+ * key once, at frame 40.
+ */
+export function skipLoadScreen(keys: string[], frame: number): string[] {
+  return frame < 60 && !keys.includes('`') ? [...keys, '`'] : keys;
+}
+
 export interface GameOptions {
   seed: number;
   /** Simulation start time; also drives the date blocks. */
@@ -47,10 +56,15 @@ export class Game {
     return rt;
   }
 
-  /** Starts loading images and sounds, and resolves once the first screen's images are in. */
-  async load(onProgress: (text: string) => void): Promise<void> {
-    this.renderer.startLoading(ASSET_BASE, (d, n) => onProgress(`Loading images ${d}/${n}`));
-    this.audio.startLoading(this.rt, ASSET_BASE);
+  /**
+   * Starts loading and decoding every image and sound, and resolves once the first screen's images are in.
+   * `onProgress` hears about all of them, including those that finish after this resolves.
+   */
+  async load(onProgress: (done: number, total: number) => void): Promise<void> {
+    const counts = { images: [0, skins.length], sounds: [0, this.rt.sprites.reduce((n, s) => n + s.sounds.length, 0)] };
+    const report = () => onProgress(counts.images[0] + counts.sounds[0], counts.images[1] + counts.sounds[1]);
+    this.renderer.startLoading(ASSET_BASE, (d, n) => ((counts.images = [d, n]), report()));
+    this.audio.startLoading(this.rt, ASSET_BASE, (d, n) => ((counts.sounds = [d, n]), report()));
     const first = this.rt.drawList.filter((t) => t.visible).map((t) => t.sprite.costumes[t.currentCostume].skin);
     await this.renderer.loadNow([this.rt.stage.sprite.costumes[this.rt.stage.currentCostume].skin, ...first]);
   }

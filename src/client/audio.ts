@@ -61,14 +61,19 @@ export class AudioOut {
   private loading = 0;
   /** Play events for sounds that had not loaded yet, by voice key. */
   private pending = new Map<string, SoundEvent>();
+  private onProgress?: (done: number, total: number) => void;
+  private loaded = 0;
+  private total = 0;
 
   /**
    * Starts loading sounds in the background; the project has over a hundred megabytes of them.
    * A sound the game plays before it arrives loads next. A long one then starts where the game's
    * clock says it should be, and a short one plays only if it is still on time.
    */
-  startLoading(rt: Runtime, base: string): void {
+  startLoading(rt: Runtime, base: string, onProgress?: (done: number, total: number) => void): void {
     this.base = base;
+    this.onProgress = onProgress;
+    this.total = rt.sprites.reduce((n, s) => n + s.sounds.length, 0);
     this.files = rt.sprites.map((s) => s.sounds.map((d) => d.file));
     this.buffers = rt.sprites.map((s) => s.sounds.map(() => null));
     this.loadState = rt.sprites.map((s) => new Uint8Array(s.sounds.length));
@@ -104,6 +109,7 @@ export class AudioOut {
         .finally(() => {
           this.loadState[si][i] = 2;
           this.loading--;
+          this.onProgress?.(++this.loaded, this.total);
           this.arrived(si, i);
           this.pump();
         });

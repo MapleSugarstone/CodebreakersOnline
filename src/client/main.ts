@@ -1,5 +1,5 @@
 import './style.css';
-import { Game, startFixedLoop } from './game.ts';
+import { Game, skipLoadScreen, startFixedLoop } from './game.ts';
 import { LocalInput } from './input.ts';
 import { Hud, Lobby } from './lobby.ts';
 import { OnlineGame } from './online.ts';
@@ -52,7 +52,7 @@ window.addEventListener('keydown', resumeAudio);
 (window as unknown as { __game: Game }).__game = game;
 
 function sampleLocal(): PlayerInput {
-  const p0: PlayerInput = { keys: input.sampleKeys() };
+  const p0: PlayerInput = { keys: skipLoadScreen(input.sampleKeys(), game.rt.frame) };
   if (input.mouseDirty) {
     p0.mouse = { ...input.mouse };
     input.mouseDirty = false;
@@ -216,12 +216,9 @@ function begin(start: StartInfo): void {
 window.addEventListener('error', (e) => report('error', { message: e.message, at: `${e.filename}:${e.lineno}:${e.colno}`, stack: e.error?.stack, ...(online?.diagnostics() ?? {}) }));
 window.addEventListener('unhandledrejection', (e) => report('error', { message: String(e.reason?.message ?? e.reason), stack: e.reason?.stack, ...(online?.diagnostics() ?? {}) }));
 
+// Images and sounds load and decode behind the lobby; the play buttons wait only for the first screen.
 lobby.setLoading(true, 'Loading...');
-let firstScreen = false;
 void game
-  .load((t) => !firstScreen && lobby.setStatus(t))
-  .then(() => {
-    firstScreen = true;
-    lobby.setLoading(false, '');
-  })
+  .load((done, total) => lobby.setProgress(done, total))
+  .then(() => lobby.setLoading(false, ''))
   .catch((e) => lobby.setStatus(`Could not load the game: ${String(e)}`));
