@@ -1,5 +1,5 @@
 // HTML overlays the game needs on top of the canvas: the question box, monitors and speech bubbles.
-import type { Runtime } from '../engine/runtime.ts';
+import type { PauseRule, Runtime } from '../engine/runtime.ts';
 import type { Monitors } from '../engine/defs.ts';
 import type { Value } from '../engine/cast.ts';
 
@@ -165,34 +165,76 @@ export class VarMonitors {
   }
 }
 
-/** Speech bubbles from `say`, placed above the sprite's costume box. */
+/** The pause menu over the stage while the simulation is paused. Its buttons press the pause rule's keys. */
+export class PauseMenu {
+  private el: HTMLDivElement;
+  onKey: (key: string) => void = () => {};
+
+  constructor(parent: HTMLElement, rule: PauseRule) {
+    this.el = document.createElement('div');
+    this.el.className = 'pause-menu';
+    this.el.hidden = true;
+    const title = document.createElement('div');
+    title.className = 'pause-title';
+    title.textContent = 'Paused';
+    const resume = document.createElement('button');
+    resume.textContent = 'Resume';
+    resume.addEventListener('click', () => this.onKey(rule.pauseKey));
+    const quit = document.createElement('button');
+    quit.textContent = 'Character select';
+    quit.addEventListener('click', () => this.onKey(rule.quitKey));
+    const hint = document.createElement('div');
+    hint.className = 'pause-hint';
+    hint.textContent = `${rule.pauseKey} or Esc to resume, ${rule.quitKey} for character select`;
+    this.el.append(title, resume, quit, hint);
+    parent.append(this.el);
+  }
+
+  update(rt: Runtime): void {
+    if (this.el.hidden === rt.paused) this.el.hidden = !rt.paused;
+  }
+}
+
+/**
+ * Speech bubbles from `say`, placed as the original places them: beside the top of the sprite, on its right
+ * unless that would leave the stage, and kept inside the stage.
+ */
 export class Bubbles {
-  private els = new Map<number, HTMLDivElement>();
+  private els = new Map<number, { el: HTMLDivElement; right: boolean }>();
 
   constructor(private parent: HTMLElement) {}
 
   update(rt: Runtime): void {
     const live = new Set<number>();
+    const stageW = this.parent.clientWidth || 480;
     for (const t of rt.targets) {
       const text = rt.bubbles[t.id];
       if (text === undefined || !t.visible) continue;
       live.add(t.id);
-      let el = this.els.get(t.id);
-      if (!el) {
-        el = document.createElement('div');
+      let m = this.els.get(t.id);
+      if (!m) {
+        const el = document.createElement('div');
         el.className = 'say-bubble';
         this.parent.append(el);
-        this.els.set(t.id, el);
+        m = { el, right: true };
+        this.els.set(t.id, m);
       }
-      if (el.textContent !== text) el.textContent = text;
-      // The costume box is pure geometry; the hull bounds would change simulation state.
+      if (m.el.textContent !== text) m.el.textContent = text;
+      // Bubble size in stage units. The costume box is pure geometry; the hull bounds would change simulation state.
+      const unit = 480 / stageW;
+      const w = m.el.offsetWidth * unit;
+      const h = m.el.offsetHeight * unit;
       const b = rt.render.aabb(t);
-      el.style.left = `${((Math.min(b.right, 240 - 60) + 240) / 480) * 100}%`;
-      el.style.bottom = `${((Math.min(b.top, 180 - 20) + 180) / 360) * 100}%`;
+      if (m.right && w + b.right > 240 && b.left - w > -240) m.right = false;
+      else if (!m.right && b.left - w < -240 && w + b.right < 240) m.right = true;
+      const x = m.right ? Math.max(-240, Math.min(240 - w, b.right)) : Math.min(240 - w, Math.max(-240, b.left - w));
+      const y = Math.max(-180 + h, Math.min(180, b.top + h));
+      m.el.style.left = `${((x + 240) / 480) * 100}%`;
+      m.el.style.top = `${((180 - y) / 360) * 100}%`;
     }
-    for (const [id, el] of this.els) {
+    for (const [id, m] of this.els) {
       if (!live.has(id)) {
-        el.remove();
+        m.el.remove();
         this.els.delete(id);
       }
     }

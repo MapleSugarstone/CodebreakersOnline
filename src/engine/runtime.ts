@@ -55,6 +55,20 @@ export interface RuntimeOptions {
   /** Simulation start time in ms since the epoch; also the base of the "current date" sensing block. */
   t0: number;
   tickCap?: number;
+  pause?: PauseRule;
+}
+
+/**
+ * A pause menu the original lacks, driven by ordinary key input so every player's simulation pauses on the
+ * same frame. While paused no scripts run and the game clock stands still.
+ */
+export interface PauseRule {
+  /** Pressing this key toggles the pause when `canPause` allows it. */
+  pauseKey: string;
+  /** Pressing this key while paused resumes and calls `quit`. */
+  quitKey: string;
+  canPause(rt: Runtime): boolean;
+  quit(rt: Runtime): void;
 }
 
 export class Runtime {
@@ -74,6 +88,11 @@ export class Runtime {
   threads: Thread[] = [];
   activeThread: Thread | null = null;
   frame = 0;
+  pauseRule: PauseRule | null;
+  /** Whether the pause menu is open; see `PauseRule`. */
+  paused = false;
+  /** Frames spent paused, which the game clock leaves out. */
+  pausedFrames = 0;
   t0: number;
   currentMSecs: number;
   timerStart: number;
@@ -108,6 +127,7 @@ export class Runtime {
     this.currentMSecs = opts.t0;
     this.timerStart = opts.t0;
     this.tickCap = opts.tickCap ?? 8;
+    this.pauseRule = opts.pause ?? null;
     setListRandom(() => this.rng.next());
 
     modules.forEach((m, i) => {
@@ -169,8 +189,17 @@ export class Runtime {
   /** Runs one frame with the given per-player inputs. */
   stepFrame(inputs: PlayerInput[]): void {
     this.frame++;
-    this.currentMSecs = this.t0 + this.frame * FRAME_MS;
     this.frameLog = { pen: [], sound: [] };
+    if (this.pauseRule && this.updatePause(this.pauseRule, inputs)) {
+      this.pausedFrames++;
+      // Keys held during the pause are not new presses when it ends.
+      for (let p = 0; p < 4; p++) {
+        this.io.keys[p].clear();
+        for (const k of inputs[p]?.keys ?? []) this.io.keys[p].add(k);
+      }
+      return;
+    }
+    this.currentMSecs = this.t0 + (this.frame - this.pausedFrames) * FRAME_MS;
     this.checkSoundEnds();
     this.resolvePending();
     this.applyInputs(inputs);
@@ -179,6 +208,16 @@ export class Runtime {
     this.stepThreads();
     // Promise-style waits settle between frames, right after the frame that started them.
     this.resolvePending();
+  }
+
+  /** Applies this frame's pause and quit presses; true while the game stays paused. */
+  private updatePause(rule: PauseRule, inputs: PlayerInput[]): boolean {
+    const pressed = (key: string) => inputs.some((inp, p) => inp?.keys.includes(key) && !this.io.keys[p].has(key));
+    if (this.paused && pressed(rule.quitKey)) {
+      this.paused = false;
+      rule.quit(this);
+    } else if (pressed(rule.pauseKey) && (this.paused || rule.canPause(this))) this.paused = !this.paused;
+    return this.paused;
   }
 
   applyInputs(inputs: PlayerInput[]): void {

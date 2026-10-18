@@ -9,6 +9,17 @@ const de = L.loadProject(path.join(root, process.argv[2] || 'out/merged'));
 const SPRITES = ['P1', 'P2', 'Hitbox', 'Staleness Engine', 'Costumes', 'Puppet Anchor', 'Transition', 'SRCutscenes', 'v', '1'];
 // The asset preload, which each project does its own way, and CB's training setup, which PK cut.
 const CB_EXTRA = { Costumes: ['WHEN I RECEIVE "AssetLoad"', 'WHEN I RECEIVE "Training"'] };
+// Scripts this build changes on purpose (tools/merge/hand.cjs): the grab pins, which now end when a death clears the
+// grab, and PK's Canvas resets and cycling, which would override the picks made in Extras.
+const FIXED = {
+  'Staleness Engine': [
+    (s) => s.startsWith('WHEN I RECEIVE "GrabP') && s.includes('Grab = "1"'),
+    (s) => s.startsWith('WHEN I RECEIVE "Countdown"') && s.includes('dmgmod'),
+    (s) => /^WHEN I RECEIVE "[12]Hit"/.test(s) && s.includes('@Canvas'),
+  ],
+};
+// Costumes this build takes from CB on purpose: Canvas's, which PK redrew with a built-in head.
+const CB_COSTUMES = { Costumes: (c) => c.name.includes('31`') };
 const ASSET_SPRITES = ['P1', 'P2', 'Hitbox', 'Staleness Engine', 'Costumes', 'FX', 'SRCastGuests', 'Transition', 'CSS', 'BattleUI'];
 const LISTS = ['stats', 'dmg', 'kback', 'dodgedata', 'charplaystyle', 'AirMdata', 'Outlier Moves', 'Gimmick Moves', 'heavyfreeze', 'lightfeeze',
   'fdataLOWERBOUND', 'fdataUPPERBOUND', 'disjointpresets', 'projectilepresets', 'actionpresets', 'armorpresets', 'customhitsounds',
@@ -20,7 +31,7 @@ const bad = m => { problems++; console.log('  ' + m); };
 for (const name of SPRITES) {
   const a = L.getTarget(pk, name), b = L.getTarget(de, name);
   const texts = t => L.topScripts(t).map(id => `${L.hatText(t, id)}\n${L.scriptText(t, id)}`).sort();
-  const keep = s => !(CB_EXTRA[name] || []).some(h => s.startsWith(h));
+  const keep = s => !(CB_EXTRA[name] || []).some(h => s.startsWith(h)) && !(FIXED[name] || []).some(f => f(s));
   const ta = texts(a).filter(keep), tb = texts(b).filter(keep);
   const missing = ta.filter(s => !tb.includes(s)), extra = tb.filter(s => !ta.includes(s));
   if (missing.length || extra.length) bad(`${name}: ${missing.length} PK scripts missing or changed, ${extra.length} extra (${(missing[0] || extra[0]).split('\n')[0]})`);
@@ -31,7 +42,8 @@ for (const name of LISTS) {
 }
 for (const name of ASSET_SPRITES) {
   for (const kind of ['costumes', 'sounds']) {
-    const sig = t => t[kind].map(c => `${c.name}:${c.md5ext}:${c.rotationCenterX}:${c.rotationCenterY}`).join('|');
+    const skip = kind === 'costumes' && CB_COSTUMES[name] ? CB_COSTUMES[name] : () => false;
+    const sig = t => t[kind].filter(c => !skip(c)).map(c => `${c.name}:${c.md5ext}:${c.rotationCenterX}:${c.rotationCenterY}`).join('|');
     if (sig(L.getTarget(pk, name)) !== sig(L.getTarget(de, name))) bad(`${name} ${kind} differ from PK`);
   }
 }

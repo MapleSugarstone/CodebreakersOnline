@@ -136,6 +136,7 @@ export interface Vars {
   Daily_Champion: Value;
   weekly: Value;
   weeklyFighter: Value;
+  quitmatch: Value;
 }
 
 export interface Lists {
@@ -337,6 +338,7 @@ export const def: SpriteDef = {
     Daily_Champion: "",
     weekly: "0",
     weeklyFighter: 14,
+    quitmatch: 0,
   },
   lists: {
     stats: ["8246258527","5948186924","3132206735","5635135225","5534197415","5545147025","6449156224","5446177025","5021166527","6052156023","4340186529","7546146026","8653155621","6534207019","7245175916","5541125525","4845166529","2014156328","3821114324","5045196827","7650147722","5731176630","4326105833","6036185728","6536125823","7146165924","6840156122","5442186425","6547267431","4025186319","4836155428","3121206430","7042196822","8246258532","4532156329","4523135528","2038134838","4132155935","4034152029","5947185430","5648145525","7040186925","3928125332","3928125328","3850144823","1912136326","7236165720","9936128710"],
@@ -367,7 +369,7 @@ export const def: SpriteDef = {
     actionpresets: ["RN45'","Papa1'RM5'RM8'RM18'RM35'RM36'R0M33'RM38'DM13'SmokeCheese'RG5'RM45-0'","Wam1'RM6'RN9'DM38'RN15'AN13'DN48'","Wam5'Wam6'R1M33'AN26'","Wam4'DM47'","AN21'RM2'DN47'","DM3'AN36'RM47'","DM15'DM11'RM37'DM46'","AN16'AN15'RN37'RM45-1'","AN6'AN18'RN33'DN33'RN6'RN5'RN22'RF47'AM47'","AN24'AN13'RN2'RN24'","RM15'AN28'DN1'RM5'","RM24'RN1'RF1'DN36'DM5'RG47'","AN39'Coffee'AM13'AN29'DN4'AM5'AN26'AM7'","AN16'RM17'DN15'DM16'RN13'RM1'RN29'AF5'DN7'RM7'","DM17'RN16'DN2'DN43'RM46'","DM24'AN33'DN29'RN13'DN11'AN47'RM46'","DM2'RN39'RN28'RF28'RM29'RF13'RM2'AN7'AN11'","DN46'","","","DM7'RN43'","DN28'DN42'RN25'","","","RG28'","","DM45-P'","","","","","RN46'","","","cafe1'"],
     MusicDisplayNames: ["[AK] - Full Forced Fray","[Fancy] - No Turning Back","[AK] - Skirmish!","[AK] - Backroom Coffeehouse","Use LEFT/RIGHT to play music!","[AK] - New Frontier","[Fancy] - All In Good Fun","[Updator] - Fresh Turf","[HeatelyBros] - 8 Bit Street","[Donkey Kong] - The Journey Begins!","[Naruto] - I said I'm Naruto!","[Pivotal Tuxedo] - Actraiser: Fillmore","[Updator/PTBA] - Rocket Station","[Shovel Knight] - The Crosswise Crosswind","[Meekaryo] - Tutorial","[-ArtisticGames-] - The Unwavering Flame","[Starfox] - Corneria","[SMB3] - Overworld 2","[AK/GRCC] - Pop Mecha","[contrololo] - Mushby's Theme","[Sonic Adventure] - At Dawn","[Fancy] - No Holding Back","[Updator/Chirpy 4] - VS. Ember","[Pokemon X/Y] - Xerneas/Yveltal","[Major Magnet] - Neon Utopia","[Mother 2] - Fourside","[Katamari Damacy] - Que Sera Sera","Relaxing Forest Noises","[StickBirdAnimations] - Black Feathers","[Glacier_Stratus] - Titan Souls","[Battle In The Heavens] - DQ","[Project K] - Tinmanfish","[Updator] - Fresh Turf"],
     bosslist: ["34","37","0","36","37","37","37","36","0","35","35","36","35","36","34","0","34","35","35","0","36","37","34","0","34","0","35","34","37","42","0","37","34","","","","","","34","37","42","","42","37","36","34","35","38"],
-    Unlocks: ["34","35","36","37","38","42"],
+    Unlocks: [],
     Encyclopedia_Link: ["https://scratch.mit.edu/projects/536025958/"],
     uncontrollablemoves: ["AM1","DN1","AN2","AN5","DN6","AN12","DN13","DN14","RM15","DN15","RN15","AN15","RM16","RN18","AN18","AN20","AM21","DM21","RM23","AN25","RM25","AN26","DN32","DN33","AN39","AN37","RN36","DN35","AM34","ADodge21","SDodge21","AM27","RF28","AN9","DM16","AN29","AM29","AM13","SM1","UM1","DM1","RN40","AN40","AM30","AN11"],
     dodgedata: ["7","11","11","9","10","7","8","8","6","7","10","8","6","7","7","10","8","9","7","9","6","7","10","8","10","8","9","10","7","9","7","9","10","8","9","9","11","9","8","9","17","14","9","10","14","8","8","12"],
@@ -520,6 +522,7 @@ export const def: SpriteDef = {
     "Daily Champion:": "Daily_Champion",
     "weekly": "weekly",
     "weeklyFighter": "weeklyFighter",
+    "quitmatch": "quitmatch",
   },
   varIds: {
     _1pmov: "cqq",
@@ -648,6 +651,7 @@ export const def: SpriteDef = {
     Daily_Champion: "$416",
     weekly: "$417",
     weeklyFighter: "$4h8",
+    quitmatch: "$51n",
   },
   listIds: {
     stats: "xqq",
@@ -776,6 +780,7 @@ export function build(rt: Runtime) {
     for (;;) {
       switch (f.pc) {
       case 0:
+        G.v.quitmatch = "0";
         if ((eq(G.v.char1, "48") || eq(G.v.char2, "48"))) {
           G.v.music = "27";
         }
@@ -1152,6 +1157,12 @@ export function build(rt: Runtime) {
     }
   });
 
+  /** when I receive QUITMATCH #23 */
+  function s23(t: T): void {
+    G.v.quitmatch = "1";
+    rt.broadcast("Endgame");
+  }
+
   /** define eqHP (warp context) */
   const U_eqHP_warp = rt.unit("Stage/define eqHP (warp context)", (th, f) => {
     const t = th.target as T;
@@ -1262,6 +1273,7 @@ export function build(rt: Runtime) {
     { hat: 'broadcast', msg: "CUTSCENE", top: "bqd", unit: S20 },
     { hat: 'broadcast', msg: "TRAINING", top: "$3z2", unit: S21 },
     { hat: 'broadcast', msg: "ASSETLOAD", top: "i", unit: S22 },
+    { hat: 'broadcast', msg: "QUITMATCH", top: "$51r", plain: s23 as (t: Target) => void },
   ];
   return { scripts };
 }

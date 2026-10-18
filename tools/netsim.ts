@@ -72,6 +72,28 @@ const sessions = seats.map((seat) => {
     },
   });
 });
+// With --jumps, record each frame's drawn targets as first shown and as finally corrected, to find what visibly
+// jumps when a rollback corrects a prediction.
+const jumps = process.argv.includes('--jumps');
+type Seen = Map<number, { menu: string; targets: Map<string, string> }>;
+const firstSeen: Seen[] = seats.map(() => new Map());
+const finalSeen: Seen[] = seats.map(() => new Map());
+if (jumps) {
+  sessions.forEach((s, i) => {
+    s.onFrame = (f, resim) => {
+      const rt = s.rt;
+      const targets = new Map<string, string>();
+      for (const t of rt.drawList) {
+        if (!t.visible) continue;
+        const key = `${t.name}#${t.sprite.clones.indexOf(t)}`;
+        targets.set(key, `${Math.round(t.x)},${Math.round(t.y)},${t.costumeName()}`);
+      }
+      const rec = { menu: String(rt.stage.v[rt.stage.sprite.def.varNames!.menu]), targets };
+      if (!resim) firstSeen[i].set(f, rec);
+      finalSeen[i].set(f, rec);
+    };
+  });
+}
 const scripts = seats.map(scriptFor);
 const ticks = seats.map(() => 0);
 const stalledTicks = seats.map(() => 0);
@@ -160,6 +182,32 @@ if (!agree) {
 const st = sessions.map((x) => x.stats);
 console.log(`peers=${peers} frames=${target} latency=${latency}+${jitter}ms loss=${loss} wall=${((performance.now() - started) / 1000).toFixed(1)}s`);
 st.forEach((x, i) => console.log(`  seat ${i}: frame ${x.frame} rollbacks ${x.rollbacks} rolled ${x.rolledFrames} stalls ${x.stalls} adv ${x.advantage.toFixed(2)} desync ${x.desync ? JSON.stringify(x.desync) : 'none'}`));
+if (jumps) {
+  seats.forEach((seat) => {
+    const byTarget = new Map<string, { menus: number; match: number; example: string }>();
+    let menuFrames = 0;
+    let corrected = 0;
+    for (const [f, first] of firstSeen[seat]) {
+      const fin = finalSeen[seat].get(f)!;
+      if (first.menu !== '4') menuFrames++;
+      let any = false;
+      for (const [k, a] of first.targets) {
+        const b = fin.targets.get(k);
+        if (a === b) continue;
+        any = true;
+        const e = byTarget.get(k) ?? { menus: 0, match: 0, example: '' };
+        if (first.menu === '4') e.match++;
+        else e.menus++;
+        if (!e.example) e.example = `frame ${f}: shown ${a}, corrected ${b ?? 'hidden'}`;
+        byTarget.set(k, e);
+      }
+      if (any) corrected++;
+    }
+    const top = [...byTarget.entries()].sort((a, b) => b[1].menus - a[1].menus).slice(0, 8);
+    console.log(`  seat ${seat}: ${corrected} frames showed something a correction moved (${menuFrames} menu frames); most in menus:`);
+    for (const [k, e] of top) console.log(`    ${k}: ${e.menus} menu frames, ${e.match} match frames (${e.example})`);
+  });
+}
 const v = (x: RollbackSession, n: string) => String(x.rt.stage.v[x.rt.stage.sprite.def.varNames?.[n] ?? n]);
 live.forEach((x, i) => console.log(`  seat ${i} game: menu ${v(x, 'menu')} fighters ${v(x, 'char1')}/${v(x, 'char2')} stage ${v(x, 'stage')} HP ${v(x, '1HP')}/${v(x, '2HP')}`));
 console.log(agree ? `STATES AGREE at frame ${target} (${hashes[0].toString(16)})` : `STATES DIFFER at frame ${target}: ${hashes.map((h) => h.toString(16)).join(' ')}`);

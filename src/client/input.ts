@@ -13,14 +13,15 @@ export class LocalInput {
   constructor(private stageEl: HTMLElement) {
     window.addEventListener('keydown', (e) => {
       if (!this.enabled || e.ctrlKey || e.metaKey || e.altKey) return;
-      const name = browserKeyToName(e.key);
+      // Escape opens and closes the pause menu, as P does (src/game/pause.ts).
+      const name = e.key === 'Escape' ? 'P' : browserKeyToName(e.key);
       if (!name) return;
       this.keys.add(name);
       this.tapped.add(name);
       if (e.key === ' ' || e.key.startsWith('Arrow')) e.preventDefault();
     });
     window.addEventListener('keyup', (e) => {
-      const name = browserKeyToName(e.key);
+      const name = e.key === 'Escape' ? 'P' : browserKeyToName(e.key);
       if (name) this.keys.delete(name);
       // Shifted characters can release under a different key name, so match on the physical key too.
       if (e.code.startsWith('Key')) this.keys.delete(e.code.slice(3));
@@ -61,6 +62,11 @@ export class LocalInput {
     const out = [...this.tapped];
     this.tapped.clear();
     return out;
+  }
+
+  /** Presses a key for one frame, as the pause menu's buttons do. */
+  tap(key: string): void {
+    this.tapped.add(key);
   }
 
   /** Returns sampled keys whose frame did not run, so the next sample includes them. */

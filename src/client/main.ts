@@ -46,6 +46,7 @@ const game = new Game(canvas, overlay, { seed: crypto.getRandomValues(new Uint32
 const input = new LocalInput(stageWrap);
 input.enabled = false;
 game.question.onFocusChange = (f) => (input.enabled = !f);
+game.pause.onKey = (k) => input.tap(k);
 const resumeAudio = () => game.audio.resume();
 window.addEventListener('pointerdown', resumeAudio);
 window.addEventListener('keydown', resumeAudio);

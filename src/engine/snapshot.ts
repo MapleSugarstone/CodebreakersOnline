@@ -50,6 +50,8 @@ interface PlayerSnap extends Omit<PlayerState, 'waiters' | 'owner'> {
 export interface Snapshot {
   frame: number;
   currentMSecs: number;
+  paused: boolean;
+  pausedFrames: number;
   timerStart: number;
   cloneCount: number;
   nextTargetId: number;
@@ -96,6 +98,8 @@ export function saveSnapshot(rt: Runtime): Snapshot {
   return {
     frame: rt.frame,
     currentMSecs: rt.currentMSecs,
+    paused: rt.paused,
+    pausedFrames: rt.pausedFrames,
     timerStart: rt.timerStart,
     cloneCount: rt.cloneCount,
     nextTargetId: rt.nextTargetId,
@@ -169,6 +173,8 @@ export function saveSnapshot(rt: Runtime): Snapshot {
 export function loadSnapshot(rt: Runtime, s: Snapshot): void {
   rt.frame = s.frame;
   rt.currentMSecs = s.currentMSecs;
+  rt.paused = s.paused;
+  rt.pausedFrames = s.pausedFrames;
   rt.timerStart = s.timerStart;
   rt.cloneCount = s.cloneCount;
   rt.nextTargetId = s.nextTargetId;

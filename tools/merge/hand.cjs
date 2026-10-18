@@ -79,10 +79,13 @@ function run({ dst, src, M, L, log }) {
     const cheat = L.findScripts(ta, 'WHEN I RECEIVE "MainMenu"').find(id => L.scriptText(ta, id).includes('keyPressed("t")'));
     L.replaceLiteral(ta, L.findStmt(ta, cheat, '$tempChar = "43"'), '43', '48');
     L.replaceLiteral(ta, L.findStmt(ta, cheat, 'repeat "7"'), '7', '16');
+    // The bosses (34 to 38 and 42) start unlocked, as after that code: no locked overlays and only the empty cells
+    // blacklisted. Campaign still turns them away, since they have no routes.
     const bl = listOf(ta, 'blacklistedtrainingchar');
-    bl[1] = ['34', '35', '36', '37', '38', '42'];
+    bl[1] = [];
     for (let i = 49; i <= 64; i++) bl[1].push(String(i));
-    log.push('MenuUI: PK cursor grid, locked overlays at 27.4 x 24.5 spacing, blacklist 49-64');
+    listOf(T(dst, 'Stage'), 'Unlocks')[1] = [];
+    log.push('MenuUI: PK cursor grid, locked overlays at 27.4 x 24.5 spacing, bosses unlocked, blacklist 49-64');
   }
 
   // Stages 25 and 26: PK's two new collision layouts on PK's backdrop. Stage n uses backdrop n + 5, Collision
@@ -377,6 +380,79 @@ end`);
     if (menus.length !== 1 || !as.sounds.some(s => s.name === 'lemon')) throw new Error('lemon sound fix no longer applies');
     menus[0].fields.SOUND_MENU[0] = 'lemon';
     log.push('Assists: split packed hit rows for 39 and 54, exact hit for Appel, lemon sound');
+  }
+
+  // Grabs. The held fighter is pinned to the grabber until the grabber's Grab flag comes back, but the match ending
+  // stops the script that sets it. A kill that ends the match during a grab (an assist hitting the held fighter, say)
+  // left the loser pinned into the next match, unable to move. `fix` clears the grabbed flags on every death, on the
+  // results screen and at the controls screen, so the pin now also ends there and frees the held fighter unthrown.
+  {
+    const se = T(dst, 'Staleness Engine');
+    for (const [victim, grabber] of [['1', '2'], ['2', '1']]) {
+      const head = `repeat until ($${grabber}Grab = "1")`;
+      const top = L.findScripts(se, `WHEN I RECEIVE "GrabP${victim}"`).find(id => L.scriptText(se, id).includes(head));
+      if (!top) throw new Error(`Staleness Engine: no pin loop for GrabP${victim}`);
+      const loop = L.findStmt(se, top, head);
+      replaceWith(se, loop, L.stmtText(se, loop).replace(head, `repeat until (($${grabber}Grab = "1") or ($P${victim}Grabbed = "0"))`));
+      replaceWith(se, L.findStmt(se, top, `$${victim}pmov = "3"`), `if ($P${victim}Grabbed = "0") then\n  $${victim}pmov = "0"\nelse\n  $${victim}pmov = "3"\nend`);
+    }
+    log.push('Staleness Engine: grabs end when a death or the results screen clears the grabbed flags');
+  }
+
+  // Canvas (31). PK has no head sprite, so it drew a default head into every Canvas costume. This build keeps CB's
+  // Hats B) sprite, which draws the head picked in Extras, so Canvas takes CB's headless costumes again. PK also reset
+  // Canvas's color and moves at every countdown and cycled them on every hit; those go, so the Extras picks hold.
+  {
+    const cbProject = L.loadProject(require('path').join(__dirname, '../../work/cb'));
+    const mine = T(dst, 'Costumes'), cbCostumes = T(cbProject, 'Costumes');
+    // The "[n]" prefix is the frame's speed, which PK retuned, so frames match on the rest of the name and keep PK's.
+    const frame = name => name.replace(/^\[\d+\]/, '');
+    let n = 0;
+    for (const c of mine.costumes) {
+      if (!c.name.includes('31`')) continue;
+      const old = cbCostumes.costumes.find(x => frame(x.name) === frame(c.name));
+      if (!old) throw new Error(`Costumes: CB has no ${c.name}`);
+      for (const k of ['assetId', 'md5ext', 'dataFormat', 'bitmapResolution', 'rotationCenterX', 'rotationCenterY']) c[k] = old[k];
+      n++;
+    }
+    const se = T(dst, 'Staleness Engine');
+    const cd = L.findScripts(se, 'WHEN I RECEIVE "Countdown"').find(id => L.scriptText(se, id).includes('@Canvas'));
+    for (const [item, v] of [['2', '0'], ['3', '1'], ['4', '1']]) L.deleteStmt(se, L.findStmt(se, cd, `replace item "${item}" of @Canvas with "${v}"`));
+    for (const msg of ['1Hit', '2Hit']) {
+      const s = L.findScripts(se, `WHEN I RECEIVE "${msg}"`).find(id => L.scriptText(se, id).includes('@Canvas'));
+      if (!s) throw new Error(`Staleness Engine: no Canvas script for ${msg}`);
+      L.removeScript(se, s);
+    }
+    log.push(`Canvas: CB's ${n} headless costumes, Extras picks kept through matches`);
+  }
+
+  // Pause menu. Its "Character select" broadcasts QuitMatch (see src/game/pause.ts). That ends the match through
+  // Endgame, so every sprite cleans up as at a normal finish, then skips the KO effect and the results screen.
+  {
+    const st = T(dst, 'Stage');
+    st.variables[M.ids.next()] = ['quitmatch', 0];
+    const body = code(st, '$quitmatch = "1"\nbroadcast bcast("Endgame")');
+    const bid = Object.entries(st.broadcasts).find(([, n]) => n === 'QuitMatch')?.[0] ?? M.ids.next();
+    st.broadcasts[bid] = 'QuitMatch';
+    const hat = M.ids.next();
+    st.blocks[hat] = { opcode: 'event_whenbroadcastreceived', next: body, parent: null, inputs: {}, fields: { BROADCAST_OPTION: ['QuitMatch', bid] }, shadow: false, topLevel: true, x: 0, y: 0 };
+    st.blocks[body].parent = hat;
+    const cd = L.findScripts(st, 'WHEN I RECEIVE "Countdown"')[0];
+    before(st, st.blocks[cd].next, '$quitmatch = "0"');
+
+    const fx = T(dst, 'FX');
+    const end = L.findScripts(fx, 'WHEN I RECEIVE "Endgame"').find(id => L.scriptText(fx, id).includes('COSTUME="final"'));
+    if (!end) throw new Error('FX: no Endgame script with the KO effect');
+    after(fx, L.findStmt(fx, end, 'control_stop(STOP_OPTION:"other scripts in sprite")'),
+      'if ($quitmatch = "1") then\n  looks_hide()\n  broadcast and wait bcast("Transition")\n  broadcast bcast("ResultsScreen")\n  control_stop(STOP_OPTION:"this script")\nend');
+
+    const ui = T(dst, 'BattleUI');
+    const res = L.findScripts(ui, 'WHEN I RECEIVE "ResultsScreen"').find(id => L.scriptText(ui, id).includes('call "Results"()'));
+    if (!res) throw new Error('BattleUI: no results screen script');
+    before(ui, L.findStmt(ui, res, 'if ($char1 = "32") then'),
+      // The wait lets the previous transition finish sliding out. Two at once fight over the sprite and take seconds.
+      'if ($quitmatch = "1") then\n  $quitmatch = "0"\n  $music = "0"\n  sound_stopallsounds()\n  control_wait(DURATION="1")\n  broadcast and wait bcast("Transition")\n  $music = "1"\n  broadcast bcast("CSS")\n  control_stop(STOP_OPTION:"this script")\nend');
+    log.push('Pause menu: QuitMatch ends the match and goes to character select');
   }
 }
 

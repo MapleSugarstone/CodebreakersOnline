@@ -4,10 +4,11 @@ import type { PlayerInput } from '../engine/io.ts';
 import { modules, monitors } from '../game/generated/index.ts';
 import { skins } from '../game/assets.ts';
 import { installSilhouettes, type SilhouetteData } from '../game/silhouettes.ts';
+import { pauseRule } from '../game/pause.ts';
 import silhouetteData from '../game/silhouettes-data.json';
 import { WebGLRenderer } from '../render/webgl.ts';
 import { AudioOut } from './audio.ts';
-import { Bubbles, ListMonitors, QuestionBox, VarMonitors } from './overlays.ts';
+import { Bubbles, ListMonitors, PauseMenu, QuestionBox, VarMonitors } from './overlays.ts';
 
 export const ASSET_BASE = `${import.meta.env.BASE_URL}assets/`;
 
@@ -34,6 +35,7 @@ export class Game {
   lists: ListMonitors;
   vars: VarMonitors;
   bubbles: Bubbles;
+  pause: PauseMenu;
 
   constructor(
     public canvas: HTMLCanvasElement,
@@ -47,10 +49,11 @@ export class Game {
     this.lists = new ListMonitors(overlay, monitors);
     this.vars = new VarMonitors(overlay, monitors);
     this.bubbles = new Bubbles(overlay);
+    this.pause = new PauseMenu(overlay, pauseRule);
   }
 
   static createRuntime(opts: GameOptions): Runtime {
-    const rt = new Runtime(modules, skins, { seed: opts.seed, t0: opts.t0 });
+    const rt = new Runtime(modules, skins, { seed: opts.seed, t0: opts.t0, pause: pauseRule });
     installSilhouettes(rt, silhouetteData as unknown as SilhouetteData);
     rt.greenFlag();
     return rt;
@@ -81,6 +84,7 @@ export class Game {
     this.lists.update(this.rt);
     this.vars.update(this.rt);
     this.bubbles.update(this.rt);
+    this.pause.update(this.rt);
   }
 }
 

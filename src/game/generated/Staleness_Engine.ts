@@ -130,7 +130,7 @@ export function build(rt: Runtime) {
         G.v._2pmov = "1";
         G.v.P2state = "Hurt";
       case 1:
-        if (eq(G.v._1Grab, "1")) { f.pc = 2; continue; }
+        if ((eq(G.v._1Grab, "1") || eq(G.v.P2Grabbed, "0"))) { f.pc = 2; continue; }
         G.v._2dir = G.v._1dir;
         rt.broadcast("ForceCalibrate2");
         if (eq(G.v.char1, "30")) {
@@ -145,7 +145,11 @@ export function build(rt: Runtime) {
         }
         f.pc = 1; return Ctl.Yield;
       case 2:
-        G.v._2pmov = "3";
+        if (eq(G.v.P2Grabbed, "0")) {
+          G.v._2pmov = "0";
+        } else {
+          G.v._2pmov = "3";
+        }
         return Ctl.End;
       }
     }
@@ -222,7 +226,7 @@ export function build(rt: Runtime) {
         G.v._1pmov = "1";
         G.v.P1state = "Hurt";
       case 1:
-        if (eq(G.v._2Grab, "1")) { f.pc = 2; continue; }
+        if ((eq(G.v._2Grab, "1") || eq(G.v.P1Grabbed, "0"))) { f.pc = 2; continue; }
         G.v._1dir = G.v._2dir;
         rt.broadcast("ForceCalibrate1");
         if (eq(G.v.char2, "30")) {
@@ -237,7 +241,11 @@ export function build(rt: Runtime) {
         }
         f.pc = 1; return Ctl.Yield;
       case 2:
-        G.v._1pmov = "3";
+        if (eq(G.v.P1Grabbed, "0")) {
+          G.v._1pmov = "0";
+        } else {
+          G.v._1pmov = "3";
+        }
         return Ctl.End;
       }
     }
@@ -438,31 +446,8 @@ export function build(rt: Runtime) {
 
   /** when I receive COUNTDOWN #24 */
   function s24(t: T): void {
-    replaceItem(G.l.Canvas, "2", "0");
-    replaceItem(G.l.Canvas, "3", "1");
-    replaceItem(G.l.Canvas, "4", "1");
     G.v._1dmgmod = "0";
     G.v._2dmgmod = "0";
-  }
-
-  /** when I receive 1HIT #25 */
-  function s25(t: T): void {
-    if (eq(G.v.char1, "31")) {
-      rt.startSound(t, "Glug");
-      replaceItem(G.l.Canvas, "2", (num(mod(num(item(G.l.Canvas, "2")), 200)) + 10));
-      replaceItem(G.l.Canvas, "4", (num(mod(num(item(G.l.Canvas, "4")), 3)) + 1));
-      replaceItem(G.l.Canvas, "3", (num(mod(num(item(G.l.Canvas, "3")), 3)) + 1));
-    }
-  }
-
-  /** when I receive 2HIT #26 */
-  function s26(t: T): void {
-    if (eq(G.v.char2, "31")) {
-      rt.startSound(t, "Glug");
-      replaceItem(G.l.Canvas, "2", (num(mod(num(item(G.l.Canvas, "2")), 200)) + 10));
-      replaceItem(G.l.Canvas, "4", (num(mod(num(item(G.l.Canvas, "4")), 3)) + 1));
-      replaceItem(G.l.Canvas, "3", (num(mod(num(item(G.l.Canvas, "3")), 3)) + 1));
-    }
   }
 
   /** define fast1 (non-warp context) */
@@ -643,8 +628,6 @@ export function build(rt: Runtime) {
     { hat: 'broadcast', msg: "RESULTSSCREEN", top: "b(/", plain: s22 as (t: Target) => void },
     { hat: 'broadcast', msg: "ROADMAP", top: "b(;", plain: s23 as (t: Target) => void },
     { hat: 'broadcast', msg: "COUNTDOWN", top: "$3u0", plain: s24 as (t: Target) => void },
-    { hat: 'broadcast', msg: "1HIT", top: "$3u6", plain: s25 as (t: Target) => void },
-    { hat: 'broadcast', msg: "2HIT", top: "$3un", plain: s26 as (t: Target) => void },
   ];
   return { scripts };
 }

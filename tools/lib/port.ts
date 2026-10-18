@@ -4,11 +4,12 @@ import { modules } from '../../src/game/generated/index.ts';
 import { skins } from '../../src/game/assets.ts';
 import { EFFECT_NAMES, type Target } from '../../src/engine/target.ts';
 import { loadSilhouettes } from './silhouettes.ts';
+import { pauseRule } from '../../src/game/pause.ts';
 
 export const T0 = Date.UTC(2026, 0, 1, 12, 0, 0);
 
 export function createPort(seed: number, tickCap = 8): Runtime {
-  const rt = new Runtime(modules, skins, { seed, t0: T0, tickCap });
+  const rt = new Runtime(modules, skins, { seed, t0: T0, tickCap, pause: pauseRule });
   loadSilhouettes(rt);
   rt.logPen = true;
   return rt;
