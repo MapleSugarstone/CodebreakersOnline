@@ -13,7 +13,7 @@ function buildFingerprint(): string {
       else if (files.test(p)) hash.update(p.replace(/\\/g, '/')).update(readFileSync(p, 'utf8').replace(/\r\n/g, '\n'));
     }
   };
-  for (const dir of ['src/engine', 'src/game']) walk(dir);
+  for (const dir of ['src/engine', 'src/game', 'src/net']) walk(dir);
   return hash.digest('hex').slice(0, 12);
 }
 
@@ -22,10 +22,15 @@ export default defineConfig({
   base: './',
   define: {
     __BUILD__: JSON.stringify(buildFingerprint()),
+    __RELAY_URL__: JSON.stringify(process.env.RELAY_URL || ''),
   },
   server: {
     port: Number(process.env.PORT) || 5173,
-    watch: { ignored: ['**/out/**', '**/Notes/**', '**/work/**', '**/sb3/**', '**/public/assets/**'] },
+    watch: { ignored: ['**/out/**', '**/Notes/**', '**/work/**', '**/sb3/**', '**/public/assets/**', '**/server/**'] },
+    // The room server runs beside the page while developing (npm run worker:dev).
+    proxy: {
+      '/api': { target: process.env.WORKER_URL ?? 'http://127.0.0.1:8788', changeOrigin: true, ws: true },
+    },
   },
   build: {
     outDir: 'dist',

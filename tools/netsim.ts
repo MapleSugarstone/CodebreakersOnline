@@ -1,46 +1,33 @@
-// Simulated network test for the rollback session: several peers on one virtual clock with
-// latency, jitter, loss and clock drift. Checks that every peer ends in the same state as an
-// offline run fed the same inputs.
-// Usage: npx tsx tools/netsim.ts [peers] [frames] [latencyMs] [jitterMs] [loss]
-import { createPort, T0 } from './lib/port.ts';
+// Simulated network test for the rollback session: two peers on one virtual clock with latency,
+// jitter, loss and clock drift. Each peer plays its seat's keys from a recorded scenario, and the
+// test checks both end in the same state.
+// Usage: npx tsx tools/netsim.ts [peers] [frames] [latencyMs] [jitterMs] [loss] [dropAt] [scenario]
+import fs from 'node:fs';
+import path from 'node:path';
+import { createPort, InputTimeline, T0, type Scenario } from './lib/port.ts';
 import { RollbackSession, snapshotHash } from '../src/net/rollback.ts';
 import { saveSnapshot } from '../src/engine/snapshot.ts';
 import { Rng } from '../src/engine/rng.ts';
 import type { PlayerInput } from '../src/engine/io.ts';
+import { SEAT_KEYS } from '../src/client/controls.ts';
 
-const peers = Number(process.argv[2] ?? 2);
+const peers = Math.min(2, Number(process.argv[2] ?? 2));
 const frames = Number(process.argv[3] ?? 2400);
 const latency = Number(process.argv[4] ?? 60);
 const jitter = Number(process.argv[5] ?? 20);
 const loss = Number(process.argv[6] ?? 0.05);
-const seed = 4242;
+const scenarioFile = process.argv[8] ?? 'tests/scenarios/vs-1-2-s1.json';
+const scenario: Scenario = JSON.parse(fs.readFileSync(path.resolve(scenarioFile), 'utf8'));
+const seed = scenario.seed;
 const FRAME = 1000 / 30;
 
-const ROWS = [
-  ['D', 'A', 'W', 'S', 'B', 'V', 'C', 'space', 'F'],
-  ['right arrow', 'left arrow', 'up arrow', 'down arrow', '.', ',', 'M', 'N', 'K'],
-  ['L', 'J', 'I', 'K', 'O', 'U', 'Y', 'H', 'G'],
-  ['6', '4', '8', '5', '9', '7', '1', '0', '3'],
-];
-
-/** Scripted input for a seat: seat 0 starts the tutorial and leaves to the menu, then everyone mashes. */
+/** Seat 1 plays the scenario's Player 2 keys, and seat 0 plays every other key. */
 function scriptFor(seat: number): (tick: number) => PlayerInput {
-  const rng = new Rng(100 + seat);
-  const held = new Set<string>();
-  let nextChange = 0;
+  const tl = new InputTimeline(scenario.events);
+  const p2 = new Set(SEAT_KEYS[1]);
   return (tick) => {
-    if (seat === 0) {
-      if (tick >= 320 && tick < 324) return { keys: ['space'] };
-      if (tick >= 520 && tick < 524) return { keys: ['P'] };
-      if (tick < 700) return { keys: [] };
-    } else if (tick < 700) return { keys: [] };
-    if (tick >= nextChange) {
-      const k = ROWS[seat][Math.floor(rng.next() * ROWS[seat].length)];
-      if (held.has(k)) held.delete(k);
-      else held.add(k);
-      nextChange = tick + 1 + Math.floor(rng.next() * 10);
-    }
-    return { keys: [...held] };
+    const keys = tl.inputsFor(tick + 1)[0]?.keys ?? [];
+    return { keys: keys.filter((k) => p2.has(k) === (seat === 1)) };
   };
 }
 
@@ -87,6 +74,7 @@ const sessions = seats.map((seat) => {
 });
 const scripts = seats.map(scriptFor);
 const ticks = seats.map(() => 0);
+const stalledTicks = seats.map(() => 0);
 const drift = seats.map((s) => 1 + (s - (peers - 1) / 2) * 0.002);
 seats.forEach((s) => push({ t: s * 7, kind: 'tick', peer: s }));
 
@@ -119,7 +107,9 @@ while (queue.length || dropEvents.length) {
     gone.add(e.peer);
     continue;
   }
-  s.tick(scripts[e.peer](ticks[e.peer]++));
+  // Like the page, a tick that does not advance offers the same input again next time.
+  if (s.tick(scripts[e.peer](ticks[e.peer]))) ticks[e.peer]++;
+  else stalledTicks[e.peer]++;
   if (dropAt && e.peer === 0 && !dropSent && gone.has(leaver) && s.stats.silentFor[leaver] > 5000) {
     const offer = s.dropOffer(leaver);
     s.applyDrop(leaver, offer.frame, offer.data);
@@ -132,7 +122,7 @@ while (queue.length || dropEvents.length) {
     lastProbe = now;
   }
   const done = sessions.every((x, i) => gone.has(i) || x.confirmedFrame() >= frames);
-  if (!done && ticks[e.peer] < frames * 3) push({ t: now + FRAME * drift[e.peer], kind: 'tick', peer: e.peer });
+  if (!done && ticks[e.peer] + stalledTicks[e.peer] < frames * 3) push({ t: now + FRAME * drift[e.peer], kind: 'tick', peer: e.peer });
 }
 
 // Every remaining peer's state at the common confirmed frame must agree.
@@ -165,11 +155,13 @@ if (!agree) {
       break;
     }
   }
-  console.log('Main_State', sessions.map((x) => x.rt.stage.v.Main_State));
+  console.log('menu', sessions.map((x) => x.rt.stage.v.menu));
 }
 const st = sessions.map((x) => x.stats);
 console.log(`peers=${peers} frames=${target} latency=${latency}+${jitter}ms loss=${loss} wall=${((performance.now() - started) / 1000).toFixed(1)}s`);
 st.forEach((x, i) => console.log(`  seat ${i}: frame ${x.frame} rollbacks ${x.rollbacks} rolled ${x.rolledFrames} stalls ${x.stalls} adv ${x.advantage.toFixed(2)} desync ${x.desync ? JSON.stringify(x.desync) : 'none'}`));
+const v = (x: RollbackSession, n: string) => String(x.rt.stage.v[x.rt.stage.sprite.def.varNames?.[n] ?? n]);
+live.forEach((x, i) => console.log(`  seat ${i} game: menu ${v(x, 'menu')} fighters ${v(x, 'char1')}/${v(x, 'char2')} stage ${v(x, 'stage')} HP ${v(x, '1HP')}/${v(x, '2HP')}`));
 console.log(agree ? `STATES AGREE at frame ${target} (${hashes[0].toString(16)})` : `STATES DIFFER at frame ${target}: ${hashes.map((h) => h.toString(16)).join(' ')}`);
 if (!agree || st.some((x) => x.desync)) process.exitCode = 1;
 void T0;

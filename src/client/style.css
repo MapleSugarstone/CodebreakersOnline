@@ -15,6 +15,20 @@
   --monitor-border: #c4ccd9;
   --monitor-item: #fc662c;
   --monitor-item-fg: #ffffff;
+  /* Player colors from the game's controls screen. */
+  --p1: #ef7f7f;
+  --p2: #7fdfeb;
+  --ui-menu-bg: none;
+  --ui-clouds: none;
+}
+
+.lobby-name {
+  padding: 0.3em 0;
+  font-size: 2.2em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
 * {

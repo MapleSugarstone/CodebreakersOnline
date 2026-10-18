@@ -23,7 +23,10 @@
     "test:math": "tsx tools/dmath-test.ts",
     "dev": "vite",
     "build": "vite build",
-    "test:rollback": "tsx tools/rollback-test.ts tests/scenarios/campaign-44.json"
+    "test:rollback": "tsx tools/rollback-test.ts tests/scenarios/campaign-44.json",
+    "worker:dev": "npm --prefix server run dev",
+    "worker:deploy": "npm --prefix server run deploy",
+    "test:net": "tsx tools/netsim.ts 2 3400 80 30 0.05"
   },
   "devDependencies": {
     "@scratch/scratch-render": "15.1.1",

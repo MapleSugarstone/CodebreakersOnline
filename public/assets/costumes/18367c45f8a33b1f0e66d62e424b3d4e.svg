@@ -1,0 +1,1033 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="none" x="0px" y="0px" width="480px" height="360px" viewBox="0 0 480 360">
+<defs>
+<radialGradient id="Gradient_1" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="11.849999999999994" fx="0" fy="0" gradientTransform="matrix( 1.0000000000000004, 0, 0, 1.0000000000000004, 59.75,58.65)" spreadMethod="pad">
+<stop offset="0%" stop-color="#660000"/>
+
+<stop offset="100%" stop-color="#1F1F1F"/>
+</radialGradient>
+
+<radialGradient id="Gradient_2" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="9.637500000000003" fx="0" fy="0" gradientTransform="matrix( 0.9999999999999998, 0, 0, 0.9999999999999998, 30.6,172.65)" spreadMethod="pad">
+<stop offset="0%" stop-color="#660000"/>
+
+<stop offset="100%" stop-color="#1F1F1F"/>
+</radialGradient>
+
+<radialGradient id="Gradient_3" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="6.600000000000001" fx="0" fy="0" gradientTransform="matrix( 0.9999999999999998, 0, 0, 0.9999999999999998, 55.25,174.7)" spreadMethod="pad">
+<stop offset="0%" stop-color="#660000"/>
+
+<stop offset="100%" stop-color="#1F1F1F"/>
+</radialGradient>
+
+<radialGradient id="Gradient_4" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="4.649999999999999" fx="0" fy="0" gradientTransform="matrix( 1.0000000000000004, 0, 0, 1.0000000000000004, 51.4,124.9)" spreadMethod="pad">
+<stop offset="0%" stop-color="#660000"/>
+
+<stop offset="100%" stop-color="#1F1F1F"/>
+</radialGradient>
+
+<linearGradient id="Gradient_5" gradientUnits="userSpaceOnUse" x1="46.3125" y1="94.4125" x2="54.587500000000006" y2="93.2875" spreadMethod="pad">
+<stop offset="0%" stop-color="#1F1F1F"/>
+
+<stop offset="100%" stop-color="#666666"/>
+</linearGradient>
+
+<linearGradient id="Gradient_6" gradientUnits="userSpaceOnUse" x1="37.7125" y1="93.325" x2="46.7875" y2="92.075" spreadMethod="pad">
+<stop offset="0%" stop-color="#666666"/>
+
+<stop offset="100%" stop-color="#1F1F1F"/>
+</linearGradient>
+
+<linearGradient id="Gradient_7" gradientUnits="userSpaceOnUse" x1="59.474999999999994" y1="12.7" x2="78.625" y2="12.7" spreadMethod="pad">
+<stop offset="0%" stop-color="#1F1F1F"/>
+
+<stop offset="100%" stop-color="#000000"/>
+</linearGradient>
+
+<radialGradient id="Gradient_8" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="15.150000000000006" fx="0" fy="0" gradientTransform="matrix( 0.9999999999999997, 0, 0, 0.9999999999999997, 75.7,13.15)" spreadMethod="pad">
+<stop offset="0%" stop-color="#CC0000"/>
+
+<stop offset="100%" stop-color="#660000"/>
+</radialGradient>
+
+<linearGradient id="Gradient_9" gradientUnits="userSpaceOnUse" x1="27.1125" y1="2.4" x2="60.3875" y2="2.4" spreadMethod="pad">
+<stop offset="0%" stop-color="#2E2E2E"/>
+
+<stop offset="100%" stop-color="#000000"/>
+</linearGradient>
+
+<linearGradient id="Gradient_10" gradientUnits="userSpaceOnUse" x1="30.35" y1="12.7" x2="60.050000000000004" y2="12.7" spreadMethod="pad">
+<stop offset="0%" stop-color="#000000"/>
+
+<stop offset="100%" stop-color="#2E2E2E"/>
+</linearGradient>
+
+<linearGradient id="Gradient_11" gradientUnits="userSpaceOnUse" x1="60.0375" y1="2.35" x2="79.36250000000001" y2="2.35" spreadMethod="pad">
+<stop offset="0%" stop-color="#2E2E2E"/>
+
+<stop offset="100%" stop-color="#000000"/>
+</linearGradient>
+
+<radialGradient id="Gradient_12" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="7.962499999999999" fx="0" fy="0" gradientTransform="matrix( 1.0000000000000002, 0, 0, 1.0000000000000002, 44.5,90.15)" spreadMethod="pad">
+<stop offset="0%" stop-color="#660000"/>
+
+<stop offset="100%" stop-color="#1F1F1F"/>
+</radialGradient>
+
+<radialGradient id="Gradient_13" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="15.3125" fx="0" fy="0" gradientTransform="matrix( 1, 0, 0, 1, 47.45,38.4)" spreadMethod="pad">
+<stop offset="0%" stop-color="#000000"/>
+
+<stop offset="100%" stop-color="#660000"/>
+</radialGradient>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_0_MEMBER_0_FILL">
+<path fill="#550807" stroke="none" d="M 87.35 89.85 Q 84.15 92.65 82.25 98.1 80.35 103.6 80.9 108.55 81.4 113.5 84 115.05 86.6 116.6 89.85 113.8 93.05 111 94.95 105.5 96.85 100 96.35 95.1 95.8 90.15 93.2 88.6 90.6 87.05 87.35 89.85 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_0_MEMBER_1_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 89 96.45 L 90.7 92.8 Q 90.4 92.1 89.55 91.05 87.9 88.9 85.25 87 81.1 84.1 71.75 79.5 L 63.25 75.5 53.25 89.15 59.75 95.75 Q 67.25 103.05 72.2 106.65 77.35 110.45 83.65 115.9 84.35 107.55 86.25 102.75 87.15 100.55 89 96.45 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_0_MEMBER_2_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 98.55 92.75 L 98.75 85.65 80.6 85.15 80.4 92.25 98.55 92.75 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_0_MEMBER_2_MEMBER_1_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 100.05 85.45 L 93 85.05 95.55 96 92.1 102.15 100.55 100.1 100.05 85.45 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 70.6 37.95 L 53.8 35.95 48.9 77.2 65.7 79.2 70.6 37.95 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_1_FILL">
+<path fill="url(#Gradient_1)" stroke="none" d="M 54.6 51.3 L 53.05 64.15 65.15 65.6 66.7 52.7 54.6 51.3 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_0_FILL">
+<path fill="#000000" stroke="none" d="M 53.55 43.85 Q 55.25 47.4 58.9 48.75 62.6 50.05 66.15 48.4 69.65 46.7 71 43.05 72.35 39.35 70.65 35.8 69.05 32.25 65.3 30.95 63.5 30.3 61.6 30.4 59.75 30.5 58.1 31.25 54.55 32.95 53.2 36.6 51.85 40.3 53.55 43.85 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_0_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 60.95 71.1 Q 57.2 69.8 53.75 71.45 50.2 73.15 48.85 76.8 47.6 80.5 49.2 84.05 50.9 87.55 54.55 88.9 58.25 90.25 61.8 88.55 65.35 86.95 66.65 83.2 68 79.55 66.3 76 64.7 72.45 60.95 71.1 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_3_MEMBER_1_FILL">
+<path fill="#000000" stroke="none" d="M 58.8 76.6 Q 57.4 76.15 56.15 76.75 54.8 77.3 54.35 78.7 53.85 80 54.45 81.35 55.1 82.7 56.45 83.15 57.75 83.65 59.1 83.05 60.4 82.4 60.9 81.05 61.35 79.65 60.75 78.4 60.2 77.15 58.8 76.6 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_0_FILL">
+<path fill="#000000" stroke="none" d="M 12.4 169.1 L 28.35 167.85 32.35 160.4 12.4 169.1 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_1_FILL">
+<path fill="#000000" stroke="none" d="M 30.35 138.5 L 38.8 128.55 37.3 119.1 30.35 138.5 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 35.5 109.55 L 37.25 151.05 54.15 150.35 52.4 108.85 35.5 109.55 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_1_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 11.5 185.6 L 29.45 191.6 52.35 156.9 38.2 147.6 11.5 185.6 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_0_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 39.7 179.7 L 29 189.75 32.9 193.95 43.65 183.9 39.7 179.7 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_1_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 40.1 178.75 L 35.8 182.55 43.5 187.4 45 192.9 48.7 186.9 40.1 178.75 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_2_MEMBER_1_MEMBER_0_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 8.7 179.9 L 4.8 184.1 15.55 194.15 19.45 189.95 8.7 179.9 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_2_MEMBER_1_MEMBER_1_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 12.85 182.85 L 8.55 179.05 0 187.2 3.65 193.2 5.2 187.7 12.85 182.85 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_2_MEMBER_2_FILL">
+<path fill="#000000" stroke="none" d="M 13.2 185.8 L 13.2 193.8 36.85 193.8 36.85 185.8 13.2 185.8 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_2_MEMBER_3_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 36.65 179.9 L 25.95 189.95 29.85 194.15 40.6 184.1 36.65 179.9 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_2_MEMBER_3_MEMBER_1_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 37.2 179.05 L 32.9 182.85 40.6 187.7 42.1 193.2 45.8 187.2 37.2 179.05 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_3_MEMBER_0_MEMBER_0_FILL">
+<path fill="#000000" stroke="none" d="M 53.15 142.8 Q 50.35 140 46.45 140 42.45 140 39.75 142.8 37 145.55 37 149.45 37 153.4 39.75 156.15 42.55 158.95 46.45 158.95 50.25 158.95 53.15 156.15 55.9 153.4 55.9 149.45 55.9 145.55 53.15 142.8 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_3_MEMBER_1_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 46.2 145.95 Q 44.7 145.95 43.75 147 42.7 147.95 42.7 149.45 42.7 150.95 43.75 151.9 44.7 152.95 46.2 152.95 47.7 152.95 48.65 151.9 49.7 150.95 49.7 149.45 49.7 147.95 48.65 147 47.7 145.95 46.2 145.95 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_0_FILL">
+<path fill="#000000" stroke="none" d="M 44.3 143.7 L 49 130.3 44.75 121.8 44.3 143.7 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_1_FILL">
+<path fill="#000000" stroke="none" d="M 50 170.25 L 50.5 164.9 40.05 177.3 50 170.25 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 68.35 146.55 L 53.7 107.65 37.85 113.6 52.5 152.5 68.35 146.55 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_1_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 44.35 187.75 L 60.9 191.1 69.25 150.4 52.65 147 44.35 187.75 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_2_MEMBER_0_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 74.1 184.45 L 70.15 180.25 59.45 190.3 63.35 194.5 74.1 184.45 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_2_MEMBER_1_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 70.75 179.3 L 66.45 183.1 74.15 187.95 75.65 193.45 79.35 187.45 70.75 179.3 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_3_MEMBER_0_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 39.45 180.45 L 35.55 184.65 46.3 194.65 50.2 190.5 39.45 180.45 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_3_MEMBER_1_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 39.2 179.55 L 30.65 187.7 34.3 193.7 35.85 188.2 43.5 183.35 39.2 179.55 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_0_FILL">
+<path fill="#000000" stroke="none" d="M 60.95 139.6 Q 56.95 139.6 54.25 142.4 51.5 145.15 51.5 149.05 51.5 153 54.25 155.75 57.05 158.55 60.95 158.55 64.75 158.55 67.65 155.75 70.4 153 70.4 149.05 70.4 145.15 67.65 142.4 64.85 139.6 60.95 139.6 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_5_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 60.7 145.5 Q 59.2 145.5 58.25 146.55 57.2 147.5 57.2 149 57.2 150.5 58.25 151.45 59.2 152.5 60.7 152.5 62.2 152.5 63.15 151.45 64.2 150.5 64.2 149 64.2 147.5 63.15 146.55 62.2 145.5 60.7 145.5 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_6_FILL">
+<path fill="#000000" stroke="none" d="M 43.85 186.3 L 43.85 194.3 67.5 194.3 67.5 186.3 43.85 186.3 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_7_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 71.25 184.65 L 67.3 180.45 56.6 190.5 60.5 194.65 71.25 184.65 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_7_MEMBER_1_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 67.85 179.55 L 63.55 183.35 71.25 188.2 72.75 193.7 76.45 187.7 67.85 179.55 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_3_MEMBER_0_MEMBER_0_FILL">
+<path fill="url(#Gradient_5)" stroke="none" d="M 56.2 82.8 L 47.9 81.65 44.7 104.85 53 106 56.2 82.8 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_3_MEMBER_0_MEMBER_1_FILL">
+<path fill="url(#Gradient_6)" stroke="none" d="M 48.4 81.7 L 39.3 80.45 36.1 103.65 45.2 104.9 48.4 81.7 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_3_MEMBER_1_FILL">
+<path fill="#000000" stroke="none" d="M 44.75 116.4 Q 51.1 116.25 57.7 114.4 59.55 113.85 60.35 111.15 61.15 108.4 59.6 107.75 43.5 99.85 33.05 102.75 30.25 103.55 30.3 107.9 30.3 112.25 33.05 114.4 37.4 116.6 44.75 116.4 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_3_MEMBER_2_FILL">
+<path fill="#000000" stroke="none" d="M 37.75 35.4 L 32.3 42.65 31.3 76.25 33.75 83.7 36.75 90.15 56.4 93.4 61.4 87.45 68.1 51.6 64.15 38.4 37.75 35.4 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_4_MEMBER_0_FILL">
+<path fill="url(#Gradient_7)" stroke="none" d="M 59.45 4.1 L 59.45 21.3 78.65 21.3 78.65 4.1 59.45 4.1 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_4_MEMBER_4_FILL">
+<path fill="url(#Gradient_8)" stroke="none" d="M 63.65 5.7 L 63.65 19.2 78.15 19.2 78.15 5.7 63.65 5.7 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_4_MEMBER_5_FILL">
+<path fill="url(#Gradient_9)" stroke="none" d="M 60.4 4.55 L 60.4 0.25 27.1 0.25 27.1 4.55 60.4 4.55 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_4_MEMBER_6_FILL">
+<path fill="url(#Gradient_10)" stroke="none" d="M 60.05 21.1 L 60.05 4.25 31.05 4.25 30.3 15.6 60.05 21.1 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_4_MEMBER_7_FILL">
+<path fill="url(#Gradient_11)" stroke="none" d="M 60.05 0 L 60.05 4.65 79.35 4.65 60.05 0 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_0_FILL">
+<path fill="#000000" stroke="none" d="M 17.65 57.15 L 36.3 50.45 39.3 44.2 17.65 57.15 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_1_MEMBER_0_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 49.45 27.4 Q 45.45 27.4 42.75 30.2 40 32.95 40 36.85 40 40.8 42.75 43.55 45.55 46.35 49.45 46.35 53.25 46.35 56.15 43.55 58.9 40.8 58.9 36.85 58.9 32.95 56.15 30.2 53.35 27.4 49.45 27.4 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_1_MEMBER_1_FILL">
+<path fill="#000000" stroke="none" d="M 49.25 33.4 Q 47.75 33.4 46.8 34.45 45.75 35.4 45.75 36.9 45.75 38.4 46.8 39.35 47.75 40.4 49.25 40.4 50.75 40.4 51.7 39.35 52.75 38.4 52.75 36.9 52.75 35.4 51.7 34.45 50.75 33.4 49.25 33.4 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_2_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 17.65 70.1 L 31.95 79.2 54.3 44.15 40 35.05 17.65 70.1 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_3_FILL">
+<path fill="#000000" stroke="none" d="M 38.55 91.25 L 30.85 86.5 38.55 107.2 38.55 91.25 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_4_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 33.15 67.85 L 21.65 80.25 54.05 104.05 59.8 99.6 33.15 67.85 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_5_MEMBER_0_MEMBER_0_FILL">
+<path fill="#000000" stroke="none" d="M 27.3 62 Q 23.3 62 20.6 64.8 17.85 67.55 17.85 71.45 17.85 75.4 20.6 78.15 23.4 80.95 27.3 80.95 31.1 80.95 34 78.15 36.75 75.4 36.75 71.45 36.75 67.55 34 64.8 31.2 62 27.3 62 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_5_MEMBER_1_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 27.15 67.95 Q 25.65 67.95 24.7 69 23.65 69.95 23.65 71.45 23.65 72.95 24.7 73.9 25.65 74.95 27.15 74.95 28.65 74.95 29.6 73.9 30.65 72.95 30.65 71.45 30.65 69.95 29.6 69 28.65 67.95 27.15 67.95 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_6_MEMBER_0_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 75.45 109.5 L 77.75 103 61.05 97.1 58.75 103.6 75.45 109.5 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_6_MEMBER_0_MEMBER_1_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 78.9 102.9 L 72.45 100.4 71.55 111.3 66.55 116 74.95 116.6 78.9 102.9 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_6_MEMBER_1_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 55.45 121.1 L 62.2 119.55 58.3 102.3 51.55 103.8 55.45 121.1 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_6_MEMBER_1_MEMBER_1_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 53.55 115.6 L 55.3 122.25 69.35 120 69.75 111.55 64.5 115.95 53.55 115.6 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_6_MEMBER_2_FILL">
+<path fill="#000000" stroke="none" d="M 63.05 96.7 Q 61.4 94.75 58.35 95 55.3 95.25 52.65 97.5 50 99.75 49.35 102.7 48.6 105.7 50.3 107.6 51.95 109.55 55 109.3 58 109.15 60.65 106.85 63.25 104.6 64 101.6 64.65 98.6 63.05 96.7 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_6_MEMBER_3_MEMBER_0_FILL">
+<path fill="#000000" stroke="none" d="M 72 114.1 L 76.25 108.65 62.25 97.85 58.05 103.3 72 114.1 Z" stroke-width="1"/>
+</g>
+
+<g id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_6_MEMBER_3_MEMBER_1_FILL">
+<path fill="#000000" stroke="none" d="M 77.3 109.2 L 72 104.8 67.7 114.85 61.45 117.75 69.3 120.95 77.3 109.2 Z" stroke-width="1"/>
+</g>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_0_MEMBER_0_1_STROKES" stroke="#000000" stroke-width="2" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" fill="none" d="M 94.95 105.5 Q 96.85 100 96.35 95.1 95.8 90.15 93.2 88.6 90.6 87.05 87.35 89.85 84.15 92.65 82.25 98.1 80.35 103.6 80.9 108.55 81.4 113.5 84 115.05 86.6 116.6 89.85 113.8 93.05 111 94.95 105.5 Z"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_0_MEMBER_3_1_STROKES" stroke="#000000" stroke-width="2" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 73.6 87.05 L 84.35 92.85"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_0_MEMBER_4_1_STROKES" stroke="#000000" stroke-width="2" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 68.65 91.05 L 78.95 98.7"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_0_MEMBER_5_1_STROKES" stroke="#000000" stroke-width="2" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 65.1 94.2 L 75.4 103.6"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_1_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 61.5 31.95 L 53.1 28.9"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_2_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 56.4 34.35 L 48.45 37.3"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_3_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 55.3 40.3 L 51.6 50.6"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_4_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 70.9 51.45 L 60.8 47.85"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_5_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 70.55 42.85 L 73.85 33.75"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_6_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 68.7 28.2 L 69.3 35.3"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_7_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 57.45 46.9 L 61.15 53.5"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_8_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 66.05 46.55 L 74.35 44.75"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_9_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 59.15 26.05 L 64.65 31.25"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_10_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 53.95 39 L 49.6 45.9"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_1_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 63.25 74.3 L 71.7 77.35"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_2_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 65.65 79.4 L 69.9 86.75"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_3_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 59 95 L 62.7 84.7"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_4_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 53.65 87 L 43.6 83.35"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_5_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 52.65 67.85 L 49.35 76.95"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_6_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 60.15 66.85 L 55.15 71.9"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_7_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 49.8 91.15 L 56.85 88.4"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_8_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 50.45 82.65 L 45.2 76"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_9_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 61.25 71.75 L 68.85 71.3"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_10_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 63.5 92.65 L 64.6 84.6"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_0_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 12.4 169.1 L 32.35 160.4 28.35 167.85 12.4 169.1 Z"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_1_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 30.35 138.5 L 37.3 119.1 38.8 128.55 30.35 138.5 Z"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_3_MEMBER_0_MEMBER_1_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 49.7 142.25 L 58.65 142.25"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_3_MEMBER_0_MEMBER_2_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 60.15 151.7 L 53.65 146.25"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_3_MEMBER_0_MEMBER_3_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 52.65 152.2 L 52.65 163.15"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_3_MEMBER_0_MEMBER_4_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 44.95 157.45 L 34.25 157.45"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_3_MEMBER_0_MEMBER_5_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 37.5 149.45 L 37.5 139.75"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_3_MEMBER_0_MEMBER_6_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 41.2 142.75 L 44.2 136.3"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_3_MEMBER_0_MEMBER_7_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 48.45 157.7 L 42.7 162.65"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_3_MEMBER_0_MEMBER_8_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 40.45 154.45 L 33.25 149.95"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_3_MEMBER_0_MEMBER_9_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 53.9 137.5 L 46.95 140.5"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_3_MEMBER_0_MEMBER_10_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 56.15 159.4 L 54.4 151.45"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_4_1_STROKES" stroke="#FF0000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 44 116.65 L 45.25 131.8"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_MEMBER_5_1_STROKES" stroke="url(#Gradient_2)" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 38.05 165.15 L 23.85 180.6"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_0_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 44.3 143.7 L 44.75 121.8 49 130.3 44.3 143.7 Z"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_1_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 50.25 170.1 L 50 170.275 50 170.35 50.25 170.1 Z M 50 170.275 L 40.05 177.3 50.5 164.9 50 170.275 Z"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_1_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 64.2 141.85 L 73.15 141.85"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_2_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 68.15 145.85 L 74.65 151.3"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_3_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 67.15 151.8 L 67.15 162.75"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_4_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 59.45 157.05 L 48.75 157.05"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_5_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 52 139.35 L 52 149.05"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_6_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 55.7 142.35 L 58.7 135.9"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_7_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 57.2 162.25 L 62.95 157.3"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_8_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 54.95 154.05 L 47.75 149.55"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_9_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 61.45 140.1 L 68.4 137.1"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_10_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 68.9 151.05 L 70.65 159"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_1_1_STROKES" stroke="url(#Gradient_3)" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 50.75 184.05 L 59.7 167.6"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_2_MEMBER_2_MEMBER_2_1_STROKES" stroke="url(#Gradient_4)" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 55 133.75 L 48.75 117.35"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_4_MEMBER_1_1_STROKES" stroke="#000000" stroke-width="3.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 36.85 37.25 L 34.1 25.65 44.1 15.5"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_4_MEMBER_2_1_STROKES" stroke="#1F1F1F" stroke-width="3.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 46.3 39.25 L 40.6 28.8 47.55 16.35"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_4_MEMBER_3_1_STROKES" stroke="#000000" stroke-width="3.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 56.15 37.4 L 47.5 29.25 50.25 15.25"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_4_MEMBER_8_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 57 14.55 L 34.35 9.1"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_4_MEMBER_9_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 43.05 6.85 L 57 9.6"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_4_MEMBER_10_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 59.95 21.05 L 59.95 4.35"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_0_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 17.65 57.15 L 39.3 44.2 36.3 50.45 17.65 57.15 Z"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_1_MEMBER_0_MEMBER_1_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 52.7 29.65 L 61.65 29.65"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_1_MEMBER_0_MEMBER_2_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 63.15 39.1 L 56.65 33.65"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_1_MEMBER_0_MEMBER_3_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 55.65 39.6 L 55.65 50.55"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_1_MEMBER_0_MEMBER_4_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 37.25 44.85 L 47.95 44.85"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_1_MEMBER_0_MEMBER_5_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 40.5 27.15 L 40.5 36.85"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_1_MEMBER_0_MEMBER_6_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 44.2 30.15 L 47.2 23.7"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_1_MEMBER_0_MEMBER_7_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 45.7 50.05 L 51.45 45.1"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_1_MEMBER_0_MEMBER_8_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 43.45 41.85 L 36.25 37.35"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_1_MEMBER_0_MEMBER_9_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 49.95 27.9 L 56.9 24.9"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_1_MEMBER_0_MEMBER_10_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 57.4 38.85 L 59.15 46.8"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_3_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 38.55 107.2 L 30.85 86.5 38.55 91.25 38.55 107.2 Z"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_5_MEMBER_0_MEMBER_1_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 39.5 64.25 L 30.55 64.25"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_5_MEMBER_0_MEMBER_2_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 34.5 68.25 L 41 73.7"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_5_MEMBER_0_MEMBER_3_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 33.5 85.15 L 33.5 74.2"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_5_MEMBER_0_MEMBER_4_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 25.8 79.45 L 15.1 79.45"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_5_MEMBER_0_MEMBER_5_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 18.35 71.45 L 18.35 61.75"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_5_MEMBER_0_MEMBER_6_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 22.05 64.75 L 25.05 58.3"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_5_MEMBER_0_MEMBER_7_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 29.3 79.7 L 23.55 84.65"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_5_MEMBER_0_MEMBER_8_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 21.3 76.45 L 14.1 71.95"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_5_MEMBER_0_MEMBER_9_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 27.8 62.5 L 34.75 59.5"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_5_MEMBER_0_MEMBER_10_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 35.25 73.45 L 37 81.4"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_7_1_STROKES" stroke="url(#Gradient_12)" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 38.8 85.55 L 49.75 96"/>
+
+<path id="gun_svg_0_Layer0_0_MEMBER_0_MEMBER_5_MEMBER_8_1_STROKES" stroke="url(#Gradient_13)" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" fill="none" d="M 36.3 57.65 L 48.5 37.75"/>
+</defs>
+
+<g>
+<g>
+
+
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+
+
+</g>
+
+<g>
+
+
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+
+
+</g>
+
+<g>
+
+
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+</g>
+</svg>

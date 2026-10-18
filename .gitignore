@@ -1,7 +1,30 @@
+# Working notes and local tool settings
 Notes
-work/
-out/
-*.sb3
+.claude
+
+# Dependencies and build output
 node_modules/
-public/assets/
 dist/
+
+# Source project files, older builds and their extracted copies. The generated code and public/assets are committed,
+# because building them needs the reference runner, which a hosted build machine cannot run.
+*.sb3
+Older Versions/
+sb3/
+work/
+
+# Test, merge and tool output
+out/
+*.log
+*.tsbuildinfo
+
+# Room server local state and secrets
+server/.wrangler
+.dev.vars
+.env
+.env.*
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini

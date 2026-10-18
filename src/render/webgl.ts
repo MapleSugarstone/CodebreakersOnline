@@ -562,10 +562,44 @@ function stampBounds(_geom: RenderModel, skin: SkinDef, d: DrawState): { left: n
 }
 
 function loadImage(url: string): Promise<HTMLImageElement> {
+  if (/\.svg$/i.test(url) && !/^(blob|data):/.test(url)) return loadSvg(url);
+  return imageFrom(url);
+}
+
+function imageFrom(url: string): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
     const img = new Image();
     img.onload = () => resolve(img);
     img.onerror = () => reject(new Error(`failed to load ${url}`));
     img.src = url;
   });
+}
+
+/** Font data shared between vector costumes, by the id tools/assets.ts gave it. */
+const fontCache = new Map<string, Promise<string>>();
+
+/**
+ * Loads a vector costume after putting its fonts back. An image cannot fetch fonts itself, so each costume
+ * carries its fonts inline as the original loader wrote them. The asset folder keeps one copy of each.
+ */
+async function loadSvg(url: string): Promise<HTMLImageElement> {
+  let text = await fetch(url).then((r) => {
+    if (!r.ok) throw new Error(`failed to load ${url}`);
+    return r.text();
+  });
+  const ids = [...new Set([...text.matchAll(/cbfont:([0-9a-f]+)/g)].map((m) => m[1]))];
+  if (ids.length > 0) {
+    const fontBase = url.replace(/costumes\/[^/]+$/, 'fonts/');
+    for (const id of ids) {
+      if (!fontCache.has(id)) fontCache.set(id, fetch(`${fontBase}${id}.txt`).then((r) => r.text()));
+      const data = await fontCache.get(id)!;
+      text = text.split(`cbfont:${id}`).join(data);
+    }
+  }
+  const blobUrl = URL.createObjectURL(new Blob([text], { type: 'image/svg+xml' }));
+  try {
+    return await imageFrom(blobUrl);
+  } finally {
+    URL.revokeObjectURL(blobUrl);
+  }
 }

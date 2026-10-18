@@ -1,0 +1,1041 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="none" x="0px" y="0px" width="480px" height="360px" viewBox="0 0 480 360">
+<defs>
+<radialGradient id="Gradient_1" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="11.850000000000009" fx="0" fy="0" gradientTransform="matrix( 0.9999999999999993, 0, 0, 0.9999999999999993, 68.2,55.5)" spreadMethod="pad">
+<stop offset="0%" stop-color="#660000"/>
+
+<stop offset="100%" stop-color="#1F1F1F"/>
+</radialGradient>
+
+<radialGradient id="Gradient_2" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="6.599999999999994" fx="0" fy="0" gradientTransform="matrix( 1.0000000000000009, 0, 0, 1.8352272727272745, 93.15,170.2)" spreadMethod="pad">
+<stop offset="0%" stop-color="#660000"/>
+
+<stop offset="100%" stop-color="#1F1F1F"/>
+</radialGradient>
+
+<radialGradient id="Gradient_3" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="4.587500000000006" fx="0" fy="0" gradientTransform="matrix( 0.9999999999999989, 0, 0, 2.640326975476836, 89.35,120.35)" spreadMethod="pad">
+<stop offset="0%" stop-color="#660000"/>
+
+<stop offset="100%" stop-color="#1F1F1F"/>
+</radialGradient>
+
+<linearGradient id="Gradient_4" gradientUnits="userSpaceOnUse" x1="82.8125" y1="89.4625" x2="91.0875" y2="88.3375" spreadMethod="pad">
+<stop offset="0%" stop-color="#1F1F1F"/>
+
+<stop offset="100%" stop-color="#666666"/>
+</linearGradient>
+
+<linearGradient id="Gradient_5" gradientUnits="userSpaceOnUse" x1="74.16250000000001" y1="88.375" x2="83.2375" y2="87.125" spreadMethod="pad">
+<stop offset="0%" stop-color="#666666"/>
+
+<stop offset="100%" stop-color="#1F1F1F"/>
+</linearGradient>
+
+<linearGradient id="Gradient_6" gradientUnits="userSpaceOnUse" x1="97.825" y1="12.7" x2="116.97500000000001" y2="12.7" spreadMethod="pad">
+<stop offset="0%" stop-color="#1F1F1F"/>
+
+<stop offset="100%" stop-color="#000000"/>
+</linearGradient>
+
+<radialGradient id="Gradient_7" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="15.149999999999991" fx="0" fy="0" gradientTransform="matrix( 1.0000000000000007, 0, 0, 1.0000000000000007, 114.05,13.15)" spreadMethod="pad">
+<stop offset="0%" stop-color="#CC0000"/>
+
+<stop offset="100%" stop-color="#660000"/>
+</radialGradient>
+
+<linearGradient id="Gradient_8" gradientUnits="userSpaceOnUse" x1="65.46249999999999" y1="2.4" x2="98.7375" y2="2.4" spreadMethod="pad">
+<stop offset="0%" stop-color="#2E2E2E"/>
+
+<stop offset="100%" stop-color="#000000"/>
+</linearGradient>
+
+<linearGradient id="Gradient_9" gradientUnits="userSpaceOnUse" x1="68.69999999999999" y1="12.7" x2="98.4" y2="12.7" spreadMethod="pad">
+<stop offset="0%" stop-color="#000000"/>
+
+<stop offset="100%" stop-color="#2E2E2E"/>
+</linearGradient>
+
+<linearGradient id="Gradient_10" gradientUnits="userSpaceOnUse" x1="98.38749999999999" y1="2.35" x2="117.7125" y2="2.35" spreadMethod="pad">
+<stop offset="0%" stop-color="#2E2E2E"/>
+
+<stop offset="100%" stop-color="#000000"/>
+</linearGradient>
+
+<radialGradient id="Gradient_11" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="10.924999999999997" fx="0" fy="0" gradientTransform="matrix( 1.0000000000000004, 0, 0, 0.08810068649885587, 108.35,86.05)" spreadMethod="pad">
+<stop offset="0%" stop-color="#660000"/>
+
+<stop offset="100%" stop-color="#1F1F1F"/>
+</radialGradient>
+
+<radialGradient id="Gradient_12" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="3.612499999999997" fx="0" fy="0" gradientTransform="matrix( 1.0000000000000009, 0, 0, 8.013840830449833, 80.9,42.85)" spreadMethod="pad">
+<stop offset="0%" stop-color="#000000"/>
+
+<stop offset="100%" stop-color="#660000"/>
+</radialGradient>
+
+<radialGradient id="Gradient_13" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="14.137500000000003" fx="0" fy="0" gradientTransform="matrix( 0.9999999999999998, 0, 0, 0.03890362511052166, 32.6,147.25)" spreadMethod="pad">
+<stop offset="0%" stop-color="#660000"/>
+
+<stop offset="100%" stop-color="#1F1F1F"/>
+</radialGradient>
+
+<g id="run14_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_0_FILL">
+<path fill="#666666" stroke="none" d="M 68.65 103.35 L 77.95 116.25 85.55 123.55 94.85 127.7 103.65 130.9 110.05 131.95 118.35 129.15 105.9 124.2 98.3 120.65 91.3 115.05 83.65 107.8 73.25 95.95 68.65 103.35 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_1_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 77.25 93.45 L 66.7 72.5 53.1 82.65 77.95 115.95 77.25 93.45 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 75.05 89.1 L 72.75 95.8 89.95 101.6 92.25 94.9 75.05 89.1 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_1_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 93.65 95.05 L 87 92.6 86.2 103.8 81.15 108.7 89.8 109.2 93.65 95.05 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 52.4 70.05 L 67.9 76.9 84.7 38.9 69.25 32.05 52.4 70.05 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_1_FILL">
+<path fill="url(#Gradient_1)" stroke="none" d="M 60.15 58.8 L 71.3 63.75 76.55 51.9 65.4 46.95 60.15 58.8 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_2_MEMBER_0_FILL">
+<path fill="#000000" stroke="none" d="M 85.35 36.8 Q 84.8 32.9 81.65 30.6 78.6 28.2 74.65 28.8 70.85 29.3 68.45 32.45 66.1 35.55 66.65 39.5 67.15 43.3 70.3 45.7 73.5 48.05 77.35 47.5 81.25 46.9 83.55 43.8 85.9 40.65 85.35 36.8 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_0_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 65.7 67.75 Q 62.6 65.45 58.65 65.95 54.75 66.5 52.45 69.65 50.1 72.75 50.65 76.65 51.25 80.6 54.35 82.9 57.5 85.25 61.35 84.7 65.25 84.15 67.55 81 69.9 77.9 69.35 74 68.8 70.15 65.7 67.75 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_3_MEMBER_1_FILL">
+<path fill="#000000" stroke="none" d="M 62 72.4 Q 60.75 71.55 59.4 71.75 58.05 71.9 57.1 73.1 56.2 74.3 56.45 75.7 56.6 77.05 57.8 78 58.9 78.8 60.4 78.65 61.8 78.4 62.7 77.3 63.5 76.15 63.35 74.7 63.1 73.3 62 72.4 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_1_FILL">
+<path fill="#000000" stroke="none" d="M 52.1 128.45 L 63.85 122.7 66.25 113.45 52.1 128.45 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_2_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 68.35 103.9 L 53.35 142.7 69.15 148.8 84.15 110 68.35 103.9 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_4_MEMBER_0_FILL">
+<path fill="#000000" stroke="none" d="M 82.2 139.2 L 86.95 125.75 82.7 117.3 82.2 139.2 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_4_MEMBER_1_FILL">
+<path fill="#000000" stroke="none" d="M 87.95 165.7 L 88.45 160.35 78 172.8 87.95 165.7 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 90.45 148 L 106.3 142.05 91.65 103.15 75.8 109.15 90.45 148 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_1_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 107.2 145.9 L 90.6 142.5 82.3 183.25 98.85 186.6 107.2 145.9 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_2_MEMBER_0_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 112.05 179.9 L 108.1 175.7 97.4 185.75 101.3 189.95 112.05 179.9 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_2_MEMBER_1_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 108.7 174.75 L 104.4 178.55 112.1 183.4 113.6 188.9 117.3 182.9 108.7 174.75 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_3_MEMBER_0_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 77.4 175.95 L 73.5 180.15 84.25 190.2 88.15 186 77.4 175.95 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_3_MEMBER_1_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 77.15 175 L 68.55 183.15 72.25 189.15 73.8 183.65 81.45 178.8 77.15 175 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_0_FILL">
+<path fill="#000000" stroke="none" d="M 98.9 135.1 Q 95 135.1 92.2 137.9 89.45 140.65 89.45 144.6 89.45 148.5 92.2 151.25 95 154.05 98.9 154.05 102.7 154.05 105.6 151.25 108.35 148.5 108.35 144.6 108.35 140.65 105.6 137.9 102.7 135.1 98.9 135.1 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_5_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 98.65 140.95 Q 97.15 140.95 96.2 142 95.15 142.95 95.15 144.45 95.15 145.95 96.2 146.9 97.15 147.95 98.65 147.95 100.05 147.95 101.1 146.9 102.15 145.95 102.15 144.45 102.15 142.95 101.1 142 100.05 140.95 98.65 140.95 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_6_FILL">
+<path fill="#000000" stroke="none" d="M 81.8 181.8 L 81.8 189.75 105.45 189.75 105.45 181.8 81.8 181.8 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_7_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 109.2 180.15 L 105.25 175.95 94.55 186 98.45 190.2 109.2 180.15 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_7_MEMBER_1_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 105.8 175 L 101.5 178.8 109.2 183.65 110.7 189.15 114.4 183.15 105.8 175 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_5_MEMBER_0_MEMBER_0_FILL">
+<path fill="url(#Gradient_4)" stroke="none" d="M 92.7 77.9 L 84.4 76.75 81.2 99.9 89.5 101.05 92.7 77.9 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_5_MEMBER_0_MEMBER_1_FILL">
+<path fill="url(#Gradient_5)" stroke="none" d="M 75.75 75.55 L 72.55 98.7 81.65 99.95 84.85 76.8 75.75 75.55 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_5_MEMBER_1_FILL">
+<path fill="#000000" stroke="none" d="M 66.75 102.9 Q 66.75 107.25 69.5 109.4 73.85 111.6 81.2 111.4 87.55 111.25 94.15 109.4 95.95 108.85 96.8 106.15 97.6 103.4 96.05 102.75 79.95 94.85 69.5 97.75 66.7 98.55 66.75 102.9 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_5_MEMBER_2_FILL">
+<path fill="#000000" stroke="none" d="M 104.55 46.6 L 100.6 33.4 74.2 30.4 68.7 37.65 67.75 71.25 70.2 78.7 73.2 85.2 92.85 88.4 97.85 82.45 104.55 46.6 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_6_MEMBER_0_FILL">
+<path fill="url(#Gradient_6)" stroke="none" d="M 97.8 4.1 L 97.8 21.3 117 21.3 117 4.1 97.8 4.1 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_6_MEMBER_4_FILL">
+<path fill="url(#Gradient_7)" stroke="none" d="M 102 5.7 L 102 19.2 116.5 19.2 116.5 5.7 102 5.7 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_6_MEMBER_5_FILL">
+<path fill="url(#Gradient_8)" stroke="none" d="M 98.75 4.55 L 98.75 0.25 65.45 0.25 65.45 4.55 98.75 4.55 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_6_MEMBER_6_FILL">
+<path fill="url(#Gradient_9)" stroke="none" d="M 98.4 21.1 L 98.4 4.25 69.4 4.25 68.65 15.6 98.4 21.1 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_6_MEMBER_7_FILL">
+<path fill="url(#Gradient_10)" stroke="none" d="M 98.4 0 L 98.4 4.65 117.7 4.65 98.4 0 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_7_MEMBER_0_FILL">
+<path fill="#000000" stroke="none" d="M 66.3 76.5 L 76.65 59.6 75.1 52.85 66.3 76.5 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_7_MEMBER_1_MEMBER_0_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 84.35 48.25 Q 87.45 45.85 87.85 41.95 88.35 38.05 85.85 34.95 83.4 31.9 79.5 31.5 75.65 31 72.55 33.5 69.55 35.9 69.05 39.85 68.65 43.75 71.1 46.8 73.55 49.85 77.4 50.25 81.35 50.75 84.35 48.25 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_7_MEMBER_1_MEMBER_1_FILL">
+<path fill="#000000" stroke="none" d="M 81.8 41.35 Q 81.95 39.85 81.1 38.75 80.25 37.65 78.75 37.5 77.3 37.35 76.2 38.2 75.05 39.1 74.9 40.55 74.75 41.95 75.65 43.1 76.55 44.25 77.95 44.4 79.4 44.55 80.55 43.65 81.65 42.8 81.8 41.35 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_7_MEMBER_2_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 91.2 84.95 L 86.75 43.6 69.9 45.4 74.35 86.75 91.2 84.95 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_7_MEMBER_3_FILL">
+<path fill="#000000" stroke="none" d="M 103.9 90.1 L 94.9 91.2 113.85 102.55 103.9 90.1 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_7_MEMBER_4_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 85 75.1 L 83.75 91.95 123.95 90.3 125.65 83.25 85 75.1 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_7_MEMBER_5_MEMBER_0_MEMBER_0_FILL">
+<path fill="#000000" stroke="none" d="M 81.7 91.1 Q 85.65 91.6 88.65 89.1 91.75 86.7 92.15 82.8 92.65 78.9 90.15 75.8 87.7 72.75 83.8 72.35 79.95 71.85 76.85 74.35 73.85 76.75 73.35 80.7 72.95 84.6 75.4 87.65 77.85 90.7 81.7 91.1 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_7_MEMBER_5_MEMBER_1_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 82.25 85.25 Q 83.7 85.4 84.85 84.5 85.95 83.65 86.1 82.2 86.25 80.7 85.4 79.6 84.55 78.5 83.05 78.35 81.6 78.2 80.5 79.05 79.35 79.95 79.2 81.4 79.05 82.8 79.95 83.95 80.85 85.1 82.25 85.25 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_7_MEMBER_6_MEMBER_0_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 143.9 81.5 L 141.65 75 124.95 80.8 127.2 87.3 143.9 81.5 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_7_MEMBER_6_MEMBER_0_MEMBER_1_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 142.65 74.1 L 136.1 76.15 142.2 85.25 141.2 92.05 148.15 87.25 142.65 74.1 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_7_MEMBER_6_MEMBER_1_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 139.85 97.35 L 126 86.3 121.7 91.7 135.55 102.75 139.85 97.35 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_7_MEMBER_6_MEMBER_1_MEMBER_1_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 145.95 93.25 L 140.95 86.4 139.65 93.15 130.85 99.7 136.35 103.85 145.95 93.25 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_7_MEMBER_6_MEMBER_2_FILL">
+<path fill="#000000" stroke="none" d="M 118.75 86.4 Q 118.1 89.75 119.4 92.55 120.7 95.3 123.2 95.75 125.7 96.25 127.95 94.15 130.15 92.1 130.85 88.7 131.45 85.15 130.15 82.5 128.85 79.75 126.35 79.3 123.85 78.75 121.65 80.9 119.45 82.85 118.75 86.4 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_7_MEMBER_6_MEMBER_3_MEMBER_0_FILL">
+<path fill="#000000" stroke="none" d="M 144.05 87.15 L 143.95 80.25 126.25 80.55 126.35 87.45 144.05 87.15 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_7_MEMBER_6_MEMBER_3_MEMBER_1_FILL">
+<path fill="#000000" stroke="none" d="M 145.35 80 L 138.45 79.9 141.4 90.4 138.3 96.55 146.45 94.2 145.35 80 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_8_MEMBER_0_FILL">
+<path fill="#000000" stroke="none" d="M 23.95 130.7 L 35.2 142.05 43.45 140.25 23.95 130.7 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_8_MEMBER_1_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 57.05 136.5 L 10.75 140.7 17.8 158.3 59.1 153.3 57.05 136.5 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_8_MEMBER_2_MEMBER_0_MEMBER_0_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 33 164.05 L 33.65 158.4 19.05 156.7 18.4 162.4 33 164.05 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_8_MEMBER_2_MEMBER_0_MEMBER_1_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 34.7 158.05 L 29 157.25 30.3 166.2 27.1 170.95 34.05 169.85 34.7 158.05 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_8_MEMBER_2_MEMBER_1_MEMBER_0_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 13.4 134.85 L 7.7 134.55 7 149.25 12.7 149.5 13.4 134.85 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_8_MEMBER_2_MEMBER_1_MEMBER_1_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 13.85 139.85 L 13.95 134.15 2.2 132.85 0 139.55 5.2 137.15 13.85 139.85 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_8_MEMBER_2_MEMBER_2_FILL">
+<path fill="#000000" stroke="none" d="M 11.8 142.05 L 5.7 147.2 21 165.25 27.1 160.1 11.8 142.05 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_8_MEMBER_2_MEMBER_3_MEMBER_0_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 30.85 161.85 L 31.5 156.2 16.9 154.5 16.25 160.2 30.85 161.85 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_8_MEMBER_2_MEMBER_3_MEMBER_1_FILL">
+<path fill="#1F1F1F" stroke="none" d="M 32.6 156.05 L 26.9 155.25 28.2 164.2 25 168.95 31.95 167.85 32.6 156.05 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_8_MEMBER_3_MEMBER_0_MEMBER_0_FILL">
+<path fill="#000000" stroke="none" d="M 68.25 137.8 Q 65.7 134.8 61.8 134.5 57.95 134.2 54.95 136.7 51.9 139.25 51.6 143.15 51.35 147.1 53.85 150.05 56.4 153.05 60.3 153.35 64.25 153.7 67.15 151.15 70.1 148.6 70.45 144.7 70.8 140.75 68.25 137.8 Z" stroke-width="1"/>
+</g>
+
+<g id="run14_svg_0_Layer0_8_MEMBER_3_MEMBER_1_FILL">
+<path fill="#2E2E2E" stroke="none" d="M 63.55 141.5 Q 62.6 140.4 61.15 140.25 59.65 140.15 58.65 141.1 57.55 141.95 57.4 143.45 57.3 144.95 58.25 146 59.15 147.1 60.6 147.2 61.95 147.35 63.15 146.4 64.25 145.45 64.35 144.05 64.5 142.6 63.55 141.5 Z" stroke-width="1"/>
+</g>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_2_1_STROKES" stroke="#4B4C4C" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 109.3 126.9 L 100.6 124.4"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_3_1_STROKES" stroke="#4B4C4C" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 101.9 128.85 L 87.8 122"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_4_1_STROKES" stroke="#4B4C4C" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 94.6 119.95 L 83.25 111.4"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_5_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 74.95 109.25 L 82.15 116.2"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_0_MEMBER_0_MEMBER_6_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 75.55 104.7 L 80.45 108.1"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_2_MEMBER_1_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 77.75 30.45 L 70.55 25.05"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_2_MEMBER_2_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 72.15 31.2 L 63.7 31.7"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_2_MEMBER_3_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 69.35 36.6 L 62.8 45.35"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_2_MEMBER_4_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 72.4 45.4 L 80.95 51.85"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_2_MEMBER_5_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 83.15 43.5 L 89 35.75"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_2_MEMBER_6_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 84.2 35.9 L 85.7 28.95"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_2_MEMBER_7_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 69.45 43.5 L 71.05 50.95"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_2_MEMBER_8_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 77.8 45.7 L 86.25 46.45"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_2_MEMBER_9_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 80.95 30.7 L 77.2 24.1"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_2_MEMBER_10_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 68.45 34.95 L 62.25 40.3"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_1_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 66.95 71.5 L 74.1 76.9"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_2_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 67.7 77.1 L 69.6 85.35"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_3_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 63.35 81.25 L 56.75 90"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_4_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 54.05 80.8 L 45.45 74.4"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_5_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 52.85 69.95 L 58.65 62.2"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_6_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 59.85 66.8 L 66.15 63.45"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_7_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 56.65 83.1 L 49.1 83.65"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_8_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 52.25 75.75 L 49.15 67.8"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_9_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 65.8 68.45 L 73.15 70.25"/>
+
+<path id="run14_svg_0_Layer0_0_MEMBER_1_MEMBER_3_MEMBER_0_MEMBER_10_1_STROKES" stroke="#2E2E2E" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 65.2 81.7 L 61.8 89.1"/>
+
+<path id="run14_svg_0_Layer0_1_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 63.85 122.7 L 66.25 113.45 52.1 128.45 63.85 122.7 Z"/>
+
+<path id="run14_svg_0_Layer0_3_1_STROKES" stroke="#FF0000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 73.45 113.8 L 68.55 128.25"/>
+
+<path id="run14_svg_0_Layer0_4_MEMBER_0_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 86.95 125.75 L 82.7 117.3 82.2 139.2 86.95 125.75 Z"/>
+
+<path id="run14_svg_0_Layer0_4_MEMBER_1_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 87.95 165.725 L 88.2 165.55 87.95 165.8 87.95 165.725 78 172.8 88.45 160.35 87.95 165.725 Z"/>
+
+<path id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_1_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 102.15 137.35 L 111.1 137.35"/>
+
+<path id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_2_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 106.1 141.35 L 112.6 146.8"/>
+
+<path id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_3_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 105.1 147.3 L 105.1 158.25"/>
+
+<path id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_4_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 97.4 152.55 L 86.7 152.55"/>
+
+<path id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_5_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 89.95 144.6 L 89.95 134.85"/>
+
+<path id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_6_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 93.65 137.85 L 96.65 131.4"/>
+
+<path id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_7_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 100.9 152.8 L 95.15 157.75"/>
+
+<path id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_8_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 92.9 149.55 L 85.7 145.05"/>
+
+<path id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_9_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 99.4 135.6 L 106.35 132.65"/>
+
+<path id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_0_MEMBER_4_MEMBER_10_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 106.85 146.55 L 108.6 154.55"/>
+
+<path id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_1_1_STROKES" stroke="url(#Gradient_2)" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 88.7 179.5 L 97.65 163.05"/>
+
+<path id="run14_svg_0_Layer0_4_MEMBER_2_MEMBER_2_1_STROKES" stroke="url(#Gradient_3)" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 92.9 129.2 L 86.7 112.8"/>
+
+<path id="run14_svg_0_Layer0_6_MEMBER_1_1_STROKES" stroke="#000000" stroke-width="3.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 75.2 37.3 L 72.45 25.7 82.45 15.55"/>
+
+<path id="run14_svg_0_Layer0_6_MEMBER_2_1_STROKES" stroke="#1F1F1F" stroke-width="3.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 84.65 39.25 L 78.95 28.8 85.9 16.35"/>
+
+<path id="run14_svg_0_Layer0_6_MEMBER_3_1_STROKES" stroke="#000000" stroke-width="3.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 94.5 37.45 L 85.8 29.25 88.6 15.25"/>
+
+<path id="run14_svg_0_Layer0_6_MEMBER_8_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 72.65 9.1 L 95.3 14.6"/>
+
+<path id="run14_svg_0_Layer0_6_MEMBER_9_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 81.4 6.85 L 95.3 9.6"/>
+
+<path id="run14_svg_0_Layer0_6_MEMBER_10_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 98.3 4.35 L 98.3 21.05"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_0_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 76.65 59.6 L 75.1 52.85 66.3 76.5 76.65 59.6 Z"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_1_MEMBER_0_MEMBER_1_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 76.5 33.2 L 83.5 27.6"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_1_MEMBER_0_MEMBER_2_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 82.1 33.85 L 90.55 34.1"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_1_MEMBER_0_MEMBER_3_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 85.05 39.15 L 91.85 47.7"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_1_MEMBER_0_MEMBER_4_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 82.25 48.05 L 73.9 54.7"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_1_MEMBER_0_MEMBER_5_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 71.45 46.45 L 65.4 38.9"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_1_MEMBER_0_MEMBER_6_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 70.2 38.9 L 68.5 31.95"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_1_MEMBER_0_MEMBER_7_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 85.15 46.05 L 83.8 53.5"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_1_MEMBER_0_MEMBER_8_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 76.9 48.5 L 68.45 49.5"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_1_MEMBER_0_MEMBER_9_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 73.25 33.55 L 76.85 26.9"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_1_MEMBER_0_MEMBER_10_1_STROKES" stroke="#1F1F1F" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 85.95 37.45 L 92.25 42.6"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_3_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 103.9 90.1 L 94.9 91.2 113.85 102.55 103.9 90.1 Z"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_5_MEMBER_0_MEMBER_1_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 80.8 74.05 L 87.8 68.45"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_5_MEMBER_0_MEMBER_2_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 86.4 74.7 L 94.85 74.95"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_5_MEMBER_0_MEMBER_3_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 89.35 80 L 96.15 88.55"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_5_MEMBER_0_MEMBER_4_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 86.55 88.9 L 78.2 95.55"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_5_MEMBER_0_MEMBER_5_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 75.75 87.3 L 69.7 79.75"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_5_MEMBER_0_MEMBER_6_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 74.5 79.75 L 72.8 72.8"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_5_MEMBER_0_MEMBER_7_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 89.45 86.9 L 88.1 94.35"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_5_MEMBER_0_MEMBER_8_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 81.2 89.35 L 72.75 90.35"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_5_MEMBER_0_MEMBER_9_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 77.55 74.4 L 81.15 67.75"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_5_MEMBER_0_MEMBER_10_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 90.25 78.3 L 96.55 83.45"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_7_1_STROKES" stroke="url(#Gradient_11)" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 100.5 85.45 L 115.6 86.8"/>
+
+<path id="run14_svg_0_Layer0_7_MEMBER_8_1_STROKES" stroke="url(#Gradient_12)" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 81.15 65.25 L 78.25 42.05"/>
+
+<path id="run14_svg_0_Layer0_8_MEMBER_0_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 35.2 142.05 L 43.45 140.25 23.95 130.7 35.2 142.05 Z"/>
+
+<path id="run14_svg_0_Layer0_8_MEMBER_3_MEMBER_0_MEMBER_1_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 68.65 141.75 L 74.45 148.55"/>
+
+<path id="run14_svg_0_Layer0_8_MEMBER_3_MEMBER_0_MEMBER_2_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 68.2 147.35 L 68.2 155.8"/>
+
+<path id="run14_svg_0_Layer0_8_MEMBER_3_MEMBER_0_MEMBER_3_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 63 150.45 L 54.65 157.55"/>
+
+<path id="run14_svg_0_Layer0_8_MEMBER_3_MEMBER_0_MEMBER_4_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 54 147.95 L 47.1 139.8"/>
+
+<path id="run14_svg_0_Layer0_8_MEMBER_3_MEMBER_0_MEMBER_5_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 55.25 137.1 L 62.65 130.8"/>
+
+<path id="run14_svg_0_Layer0_8_MEMBER_3_MEMBER_0_MEMBER_6_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 62.8 135.6 L 69.65 133.7"/>
+
+<path id="run14_svg_0_Layer0_8_MEMBER_3_MEMBER_0_MEMBER_7_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 56.05 150.75 L 48.55 149.6"/>
+
+<path id="run14_svg_0_Layer0_8_MEMBER_3_MEMBER_0_MEMBER_8_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 53.4 142.6 L 52.15 134.2"/>
+
+<path id="run14_svg_0_Layer0_8_MEMBER_3_MEMBER_0_MEMBER_9_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 68.2 138.5 L 75 141.9"/>
+
+<path id="run14_svg_0_Layer0_8_MEMBER_3_MEMBER_0_MEMBER_10_1_STROKES" stroke="#000000" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 64.7 151.3 L 59.75 157.75"/>
+
+<path id="run14_svg_0_Layer0_8_MEMBER_4_1_STROKES" stroke="url(#Gradient_13)" stroke-width="1.95" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" fill="none" d="M 43.55 147.65 L 22.65 146.8"/>
+</defs>
+
+<g>
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+
+
+</g>
+
+<g>
+
+
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+
+<g>
+
+</g>
+</g>
+</svg>
